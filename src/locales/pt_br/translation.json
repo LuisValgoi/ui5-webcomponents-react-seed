@@ -1,4 +1,5 @@
 {
   "app.title": "TodoList App",
-  "shell.title": "TodoList Aplicação"
+  "shell.title": "TodoList Aplicação",
+  "shell.logo.alt": "SAP Logotipo"
 }
