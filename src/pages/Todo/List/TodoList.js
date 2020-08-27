@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import CenteredLink from '../../../components/CenteredLink/CenteredLink';
 import BrowserURL from '../../../util/BrowserURL';
-import ComponentValidator from '../../../permissions/ComponentValidator';
+import ComponentValidator from '../../../auth/ComponentValidator';
 
 export default function TodoList() {
   const history = useHistory();
@@ -21,8 +21,8 @@ export default function TodoList() {
         text='Test Error Page' />
       <br />
       <ComponentValidator
-        allowedPermissions={['canAccessDropApplication']}
-        allowenceKey='permissions'>
+        allowedAuthorities={['canAccessDropApplication']}
+        authorityKey='permissions'>
         <CenteredLink
           text='Drop Application (this is a restricted text and you should not see unless you have access)' />
       </ComponentValidator>
