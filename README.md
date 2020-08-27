@@ -1,5 +1,5 @@
 # Description
-This repository is the boostratp for all your UI5 WebComponents React project.
+The goal of this repository is to increase the boostrap time spent on a new project with several things already set.
 
 # Features
 
