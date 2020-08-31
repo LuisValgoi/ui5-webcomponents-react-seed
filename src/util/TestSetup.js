@@ -8,10 +8,9 @@ const AllTheProviders = ({ children }) => {
       {children}
     </>
   )
-}
+};
 
-const customRender = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options })
+const customRender = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
 
 export * from '@testing-library/react'
-
 export { customRender as render }

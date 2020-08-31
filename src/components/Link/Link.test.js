@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '../../util/TestProvider';
+import { render } from '../../util/TestSetup';
 
 import Link from './Link';
 import { LinkDesign } from '@ui5/webcomponents-react/lib/LinkDesign';
