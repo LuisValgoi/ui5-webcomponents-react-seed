@@ -25,27 +25,45 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-test('should appear in the document', async () => {
+test('should match snapshot', async () => {
+  const childText = 'inner text'
+
   render(
     <ComponentValidator
       allowedAuthorities={['canAccessDropApplication']}
       authorityKey='permissions'>
-      <p>inner text</p>
+      <p>{childText}</p>
     </ComponentValidator>, { route: '/todo/list' });
-  const validator = await waitFor(() => screen.getByTestId('validator-component'));
+  const child = await waitFor(() => screen.getByText(childText));
 
-  expect(validator).toBeInTheDocument();
+  expect(child).toMatchSnapshot();
+});
+
+test('should appear in the document', async () => {
+  const childText = 'inner text'
+
+  render(
+    <ComponentValidator
+      allowedAuthorities={['canAccessDropApplication']}
+      authorityKey='permissions'>
+      <p>{childText}</p>
+    </ComponentValidator>, { route: '/todo/list' });
+  const child = await waitFor(() => screen.getByText(childText));
+
+  expect(child).toBeInTheDocument();
 });
 
 test('should not appear in the document', async () => {
+  const childText = 'inner text'
+
   render(
     <ComponentValidator
-      allowedAuthorities={['BLABALBLA']}
+      allowedAuthorities={['canAccessDropApplication']}
       authorityKey='permissions'>
-      <p>inner text</p>
+      <p>{childText}</p>
     </ComponentValidator>, { route: '/todo/list' });
-  const validator = await waitFor(() => screen.queryByTestId('validator-component'));
+  const child = screen.queryByAltText(childText);
 
-  expect(validator).toBeNull();
+  expect(child).not.toBeInTheDocument();
 });
 
