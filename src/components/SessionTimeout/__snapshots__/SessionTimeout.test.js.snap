@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SessionTimeout.js Test Suite should match snapshot 1`] = `
+<DocumentFragment>
+  Dialog {
+    "_domRefReadyPromise": Promise {
+      "_deferredResolve": [Function],
+    },
+    "_firePropertyChange": false,
+    "_fullyConnected": false,
+    "_inDOM": false,
+    "_monitoredChildProps": Map {},
+    "_shouldInvalidateParent": false,
+    "_state": Object {
+      "_blockLayerHidden": false,
+      "_disableInitialFocus": false,
+      "ariaLabel": undefined,
+      "default": Array [],
+      "footer": Array [],
+      "header": Array [],
+      "headerText": "",
+      "initialFocus": "",
+      "onPhone": false,
+      "opened": false,
+      "preventFocusRestore": false,
+      "stretch": false,
+    },
+    "_upToDate": false,
+    "staticAreaItem": StaticAreaItem {
+      "_rendered": false,
+      "ui5ElementContext": [Circular],
+    },
+  }
+</DocumentFragment>
+`;

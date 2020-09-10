@@ -52,6 +52,7 @@ const _getHeaderErrorIcon = () => {
 const _getHeaderInfoIcon = () => {
   return (
     <Icon
+      data-testid="message-information"
       name="message-information"
       style={{
         width: '1.5rem',
@@ -116,6 +117,7 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
   return (
     <Dialog
       ref={dialogRef}
+      data-testid="information-dialog"
       slot="header"
       header={_getHeader()}
       footer={_getFooter()}
