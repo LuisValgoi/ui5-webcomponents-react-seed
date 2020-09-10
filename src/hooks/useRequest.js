@@ -4,15 +4,13 @@ import UrlProvider from '../util/URLProvider';
 import Request from '../util/Request';
 import Constants from '../util/Constants';
 
-const FIVE_MINUTES_IN_MILLISECONDS = 1000 * 60 * 5;
-
 function useOperation(reactQueryKey, operation, urlKey, dataParam, config) {
   const { data, status } = useQuery(reactQueryKey, async () => {
     const url = UrlProvider.getUrl(urlKey);
     const res = await Request[operation](url, dataParam, config);
     return res.data;
   }, {
-    staleTime: FIVE_MINUTES_IN_MILLISECONDS
+    staleTime: Constants.REACT_QUERY.STALE_TIME
   });
 
   return { data, status };

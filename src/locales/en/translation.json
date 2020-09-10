@@ -8,5 +8,12 @@
   "page.error.alt": "Error",
   "page.notfound.text": "Hmmm, we could find this URL",
   "page.notfound.alt": "Not Found",
-  "page.fallback.reload.text": "Reload this page"
+  "page.fallback.reload.text": "Reload this page",
+  "session.expired": "Session Expired",
+  "session.expired.button.reload": "Reload",
+  "session.expired.text": "Your session has expired. Please reload to continue.",
+  "session.warning.expired": "Session Almost Expiring",
+  "session.expired.button.close": "Close",
+  "session.warning.expired.text": "If you not perform an action within 2 minutes, your session will expire.",
+  "app.generics.close": "Close"
 }
