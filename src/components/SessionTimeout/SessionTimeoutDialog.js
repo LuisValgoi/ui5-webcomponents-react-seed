@@ -25,7 +25,7 @@ const SessionTimeoutDialog = ({ dialogRef }) => {
 
   useEffect(() => {
     handleUserActivity();
-  }, []);
+  });
 
   useEffect(() => {
     const sessionIntervalFinder = setInterval(() => {
@@ -41,14 +41,14 @@ const SessionTimeoutDialog = ({ dialogRef }) => {
 
       sessionIntervalCount++;
     }, Constants.SESSION.TIMEOUT_INTERVAL);
-  }, []);
+  });
 
   const handleUserActivity = () => {
-    for (let i = 0, len = ACTIVITY_EVENTS.length; i < len; i++) {
-      window.addEventListener(ACTIVITY_EVENTS[i], () => {
+    ACTIVITY_EVENTS.forEach(EVENT => {
+      window.addEventListener(EVENT, () => {
         sessionIntervalCount = 0;
       });
-    }
+    })
   };
 
   return (

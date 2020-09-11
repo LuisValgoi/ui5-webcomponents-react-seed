@@ -3,12 +3,12 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '../../util/TestSetup';
 
-import SessionTimeout from './SessionTimeout';
+import SessionTimeoutDialog from './SessionTimeoutDialog';
 // import { useTranslation } from 'react-i18next';
 
-describe('SessionTimeout.js Test Suite', () => {
+describe('SessionTimeoutDialog.js Test Suite', () => {
   beforeAll(() => {
-    render(<SessionTimeout />);
+    render(<SessionTimeoutDialog />);
   });
 
   test('should match snapshot', () => {
@@ -16,7 +16,7 @@ describe('SessionTimeout.js Test Suite', () => {
 
     // expect(timeoutDialog).toMatchSnapshot();
 
-    const { asFragment } = render(<SessionTimeout />);
+    const { asFragment } = render(<SessionTimeoutDialog />);
 
     expect(asFragment()).toMatchSnapshot();
   });

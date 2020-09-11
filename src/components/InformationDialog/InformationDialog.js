@@ -76,7 +76,7 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
 
   useEffect(() => {
     _handleAvoidEscapeClosing(avoidEscapeClose);
-  }, []);
+  });
 
   const _onClose = () => {
     onClose && onClose();
