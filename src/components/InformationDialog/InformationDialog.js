@@ -69,7 +69,6 @@ const _getHeaderErrorIcon = () => {
 const _getHeaderInfoIcon = () => {
   return (
     <Icon
-      data-testid="message-information"
       name="message-information"
       style={style.information}
     />
@@ -130,11 +129,11 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
   return (
     <Dialog
       ref={dialogRef}
-      data-testid="information-dialog"
       slot="header"
       header={_getHeader()}
       footer={_getFooter()}
       onAfterClose={_onClose}
+      data-testid="information-dialog"
     >
       <div style={{ ...spacing.sapUiContentPadding }}>
         <FlexBox direction={FlexBoxDirection.Column}>
