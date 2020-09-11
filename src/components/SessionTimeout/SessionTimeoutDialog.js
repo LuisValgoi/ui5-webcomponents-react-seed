@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import InformationDialog, { Type } from '../InformationDialog/InformationDialog';
 
 const SESSION = {
-  TIMEOUT_INTERVAL: 1000,
+  TIMEOUT_INTERVAL: 60000,
   REFRESH_LIMIT: 15,
   REFRESH_WARNING: 13,
 };

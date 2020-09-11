@@ -10,6 +10,7 @@ import Routes from './routes/Routes';
 import './App.css';
 import CenteredContent from './components/Layout/CenteredContent';
 import SessionTimeoutDialog from './components/SessionTimeout/SessionTimeoutDialog';
+import InformationZone from './components/InformationZone/InformationZone';
 
 function App() {
   const { t } = useTranslation();
@@ -23,8 +24,10 @@ function App() {
         <CenteredContent>
           <Routes />
         </CenteredContent>
-        <SessionTimeoutDialog />
       </ErrorBoundary>
+      <InformationZone>
+        <SessionTimeoutDialog />
+      </InformationZone>
     </BrowserRouter>
   );
 }
