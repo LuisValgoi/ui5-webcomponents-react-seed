@@ -9,7 +9,7 @@ import { FlexBox } from '@ui5/webcomponents-react/lib/FlexBox';
 import { FlexBoxDirection } from '@ui5/webcomponents-react/lib/FlexBoxDirection';
 import { FlexBoxAlignItems } from '@ui5/webcomponents-react/lib/FlexBoxAlignItems';
 import { FlexBoxJustifyContent } from '@ui5/webcomponents-react/lib/FlexBoxJustifyContent';
-import { TextWrapper } from '../../util/Layout'
+import { Text } from '@ui5/webcomponents-react/lib/Text';
 import Constants from '../../util/Constants';
 
 const _getHeaderIcon = type => {
@@ -107,9 +107,9 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
         style={spacing.sapUiContentPadding}
       >
         {_getHeaderIcon(type)}
-        <TextWrapper style={spacing.sapUiTinyMarginBegin}>
+        <Text tooltip={headerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, lineHeight: '20px' }}>
           {headerText}
-        </TextWrapper>
+        </Text>
       </FlexBox>
     );
   };
@@ -125,7 +125,7 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
     >
       <div style={{ ...spacing.sapUiContentPadding }}>
         <FlexBox direction={FlexBoxDirection.Column}>
-          {innerText ? <TextWrapper>{innerText}</TextWrapper> : children}
+          {innerText ? <Text tooltip={innerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, lineHeight: '20px' }}>{innerText}</Text> : children}
         </FlexBox>
       </div>
     </Dialog>
