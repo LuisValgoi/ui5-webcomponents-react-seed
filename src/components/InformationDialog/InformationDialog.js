@@ -15,6 +15,28 @@ const KEYBOARD_KEYS = {
   ESCAPE: 27
 };
 
+const style = {
+  warning: {
+    width: '1.5rem',
+    height: '1.5rem',
+    color: '#feb60a'
+  },
+  error: {
+    width: '1.5rem',
+    height: '1.5rem',
+    color: '#ff5254'
+  },
+  information: {
+    width: '1.5rem',
+    height: '1.5rem',
+    color: 'black'
+  },
+  text: {
+    lineHeight: '20px'
+  }
+};
+
+
 const _getHeaderIcon = type => {
   switch (type) {
     case Type.Warning:
@@ -30,11 +52,7 @@ const _getHeaderWarningIcon = () => {
   return (
     <Icon
       name="message-warning"
-      style={{
-        width: '1.5rem',
-        height: '1.5rem',
-        color: '#feb60a'
-      }}
+      style={style.warning}
     />
   );
 };
@@ -43,11 +61,7 @@ const _getHeaderErrorIcon = () => {
   return (
     <Icon
       name="message-error"
-      style={{
-        width: '1.5rem',
-        height: '1.5rem',
-        color: '#ff5254'
-      }}
+      style={style.error}
     />
   );
 };
@@ -57,11 +71,7 @@ const _getHeaderInfoIcon = () => {
     <Icon
       data-testid="message-information"
       name="message-information"
-      style={{
-        width: '1.5rem',
-        height: '1.5rem',
-        color: 'black'
-      }}
+      style={style.information}
     />
   );
 };
@@ -110,7 +120,7 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
         style={spacing.sapUiContentPadding}
       >
         {_getHeaderIcon(type)}
-        <Text tooltip={headerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, lineHeight: '20px' }}>
+        <Text tooltip={headerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, ...style.text }}>
           {headerText}
         </Text>
       </FlexBox>
@@ -128,7 +138,7 @@ const InformationDialog = ({ dialogRef, avoidEscapeClose, headerText, innerText,
     >
       <div style={{ ...spacing.sapUiContentPadding }}>
         <FlexBox direction={FlexBoxDirection.Column}>
-          {innerText ? <Text tooltip={innerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, lineHeight: '20px' }}>{innerText}</Text> : children}
+          {innerText ? <Text tooltip={innerText} wrapping style={{ ...spacing.sapUiTinyMarginBegin, ...style.text }}>{innerText}</Text> : children}
         </FlexBox>
       </div>
     </Dialog>
