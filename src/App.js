@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from "react-router-dom";
 import { Helmet } from 'react-helmet';
@@ -13,7 +13,6 @@ import SessionTimeoutDialog from './components/SessionTimeout/SessionTimeoutDial
 
 function App() {
   const { t } = useTranslation();
-  const sessionDialogRef = useRef(null);
 
   return (
     <BrowserRouter>
@@ -24,7 +23,7 @@ function App() {
         <CenteredContent>
           <Routes />
         </CenteredContent>
-        <SessionTimeoutDialog dialogRef={sessionDialogRef} />
+        <SessionTimeoutDialog />
       </ErrorBoundary>
     </BrowserRouter>
   );

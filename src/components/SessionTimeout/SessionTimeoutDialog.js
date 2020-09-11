@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import InformationDialog, { Type } from '../InformationDialog/InformationDialog';
 import Constants from '../../util/Constants';
 
-const SessionTimeoutDialog = ({ dialogRef }) => {
+const SessionTimeoutDialog = () => {
+  const dialogRef = useRef(null);
+
   const { t } = useTranslation();
   const TIMEOUT_MODE = {
     type: Type.Error,
