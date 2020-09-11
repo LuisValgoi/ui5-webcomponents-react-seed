@@ -10,7 +10,10 @@ import { FlexBoxDirection } from '@ui5/webcomponents-react/lib/FlexBoxDirection'
 import { FlexBoxAlignItems } from '@ui5/webcomponents-react/lib/FlexBoxAlignItems';
 import { FlexBoxJustifyContent } from '@ui5/webcomponents-react/lib/FlexBoxJustifyContent';
 import { Text } from '@ui5/webcomponents-react/lib/Text';
-import Constants from '../../util/Constants';
+
+const KEYBOARD_KEYS = {
+  ESCAPE: 27
+};
 
 const _getHeaderIcon = type => {
   switch (type) {
@@ -65,7 +68,7 @@ const _getHeaderInfoIcon = () => {
 
 const _handleAvoidEscapeClosing = (avoidEscapeClose) => {
   document.addEventListener('keydown', (e) => {
-    if (e.keyCode === Constants.KEYBOARD_KEYS.ESCAPE && avoidEscapeClose) {
+    if (e.keyCode === KEYBOARD_KEYS.ESCAPE && avoidEscapeClose) {
       e.stopPropagation();
     }
   }, true);

@@ -1,7 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import InformationDialog, { Type } from '../InformationDialog/InformationDialog';
-import Constants from '../../util/Constants';
+
+const SESSION = {
+  TIMEOUT_INTERVAL: 1000,
+  REFRESH_LIMIT: 15,
+  REFRESH_WARNING: 13,
+};
 
 const SessionTimeoutDialog = () => {
   const dialogRef = useRef(null);
@@ -31,18 +36,18 @@ const SessionTimeoutDialog = () => {
 
   useEffect(() => {
     const sessionIntervalFinder = setInterval(() => {
-      if (sessionIntervalCount >= Constants.SESSION.REFRESH_WARNING && sessionIntervalCount < Constants.SESSION.REFRESH_LIMIT) {
+      if (sessionIntervalCount >= SESSION.REFRESH_WARNING && sessionIntervalCount < SESSION.REFRESH_LIMIT) {
         setOptions(WARNING_MODE);
         dialogRef.current.open();
 
-      } else if (sessionIntervalCount >= Constants.SESSION.REFRESH_LIMIT) {
+      } else if (sessionIntervalCount >= SESSION.REFRESH_LIMIT) {
         clearInterval(sessionIntervalFinder);
         setOptions(TIMEOUT_MODE);
         dialogRef.current.open();
       }
 
       sessionIntervalCount++;
-    }, Constants.SESSION.TIMEOUT_INTERVAL);
+    }, SESSION.TIMEOUT_INTERVAL);
   });
 
   const handleUserActivity = () => {
