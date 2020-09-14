@@ -24,24 +24,17 @@ export default function TodoList() {
         headerText={'Header text'}
         closeButtonText={'Close'}
         innerText={'Inner text'} />
-      <HyperLink
-        onClick={() => history.push('/dontexist')}
-        text='Test NotFound Page' />
+      <HyperLink onClick={() => history.push('/dontexist')} text="Test NotFound Page" />
       <br />
-      <HyperLink
-        onClick={() => history.push(BrowserURL.BUGGY)}
-        text='Test Error Page' />
+      <HyperLink onClick={() => history.push(BrowserURL.BUGGY)} text="Test Error Page" />
       <br />
-      <ComponentValidator
-        allowedAuthorities={['canAccessDropApplication']}
-        authorityKey='permissions'>
-        <HyperLink
-          text='Drop Application (this is a restricted text and you should not see unless you have access)' />
+      <ComponentValidator allowedAuthorities={['canAccessDropApplication']} authorityKey="permissions">
+        <HyperLink text="Drop Application (this is a restricted text and you should not see unless you have access)" />
       </ComponentValidator>
       <br />
       <HyperLink
         onClick={openInformationDialog}
         text='Open Information Dialog' />
     </>
-  )
+  );
 }

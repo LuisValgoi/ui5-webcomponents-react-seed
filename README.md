@@ -1,6 +1,8 @@
 # Goal
- 
+
 To deacrease the boostrap time spent on projects which uses **React + UI5 WebComponents React**.
+
+[![LuisValgoi](https://circleci.com/gh/LuisValgoi/ui5-webcomponents-react-seed.svg)](https://app.circleci.com/pipelines/github/LuisValgoi/ui5-webcomponents-react-seed) [![Netlify Status](https://api.netlify.com/api/v1/badges/f74e468b-77e5-4acc-b8af-27992ddc5b30/deploy-status)](https://app.netlify.com/sites/ui5-webcomponents-react-seed/deploys) [![Coverage Status](https://coveralls.io/repos/github/LuisValgoi/ui5-webcomponents-react-seed/badge.svg?branch=master)](https://coveralls.io/github/LuisValgoi/ui5-webcomponents-react-seed?branch=master) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 # Usage
 
@@ -42,7 +44,6 @@ Once you have created your project using the `ui5-webcomponents-react-seed` temp
 
 - Multiple Scripts.
 
-
 # Engine Included
 
 - Fallback Engine (`<ErrorBoundary />`, `<NotFound />` and `<Error />`).
@@ -52,7 +53,6 @@ Once you have created your project using the `ui5-webcomponents-react-seed` temp
 - HTTP Request Engine (w/ `Request` and `URLProvider`).
 
 - Permission Engine (w/ `RouteValidator` and `ComponentValidator`)
-
 
 # Hooks Included
 
@@ -92,7 +92,6 @@ Executes the test runner and generates the report.
 
 Builds the app for production to the `build` folder.
 
-
 # Suggested Extensions
 
 ### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
@@ -115,6 +114,9 @@ This will help you run and debug your `*.test.js` file during file during test-d
 
 This will help you better see the folders and files icons according to its extensions/subject.
 
+### [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+This will enforces a consistent style by parsing your code and re-printing it with its own rules, wrapping code when necessary.
 
 # Dependencies Included
 
