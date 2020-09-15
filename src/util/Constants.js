@@ -10,11 +10,4 @@ export default {
     },
     STALE_TIME: 1000 * 60 * 5,
   },
-  REQUEST: {
-    GET: 'get',
-    POST: 'get',
-    PUT: 'put',
-    PATCH: 'patch',
-    DELETE: 'delete',
-  },
 };

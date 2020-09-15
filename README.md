@@ -16,16 +16,18 @@
   <a href="https://github.com/prettier/prettier" target="_blank">
     <img alt="code style: prettier" src="https://badgen.net/badge/code%20style/prettier?color=pink">
   </a>
+  <a href="https://www.npmjs.com/package/cra-template-ui5-webcomponents-react-seed" target="_blank">
+    <img alt="code style: prettier" src="https://badgen.net/npm/v/cra-template-ui5-webcomponents-react-seed?icon=npm">
+  </a>
 </p>
 
-`ui5-webcomponents-react-seed` deacreases the boostrap time spent on new projects, POCs or MVPs which uses **React + UI5 WebComponents React** by leveraging several out-of-the-box components.
+`ui5-webcomponents-react-seed` deacreases the boostrap time spent on new projects, POCs or MVPs which uses **React + UI5 WebComponents React** by leveraging several out-of-the-box components, scripts & configurations.
 
 # Usage
 
 - open the terminal;
-- go to a random folder you want;
-- `npx create-react-app folderrr --template ui5-webcomponents-react-seed`;
-- cd into `folderrr`;
+- `npx create-react-app PROJECT_NAME --template ui5-webcomponents-react-seed`;
+- cd into `PROJECT_NAME`;
 - (no need to run `yarn install` since it already installs it for you);
 - run `yarn test:ci` or any other;
 - have fun with the other scripts;
@@ -35,8 +37,6 @@ PS.: It is important to add the `--template ui5-webcomponents-react-seed` at the
 # Getting Started
 
 Once you have created your project using the `ui5-webcomponents-react-seed` template, you can start by:
-
-- `yarn install`: To install this project dependencies.
 
 - `yarn mock`: To run this project with json-server.
 
@@ -84,13 +84,17 @@ Once you have created your project using the `ui5-webcomponents-react-seed` temp
 
 In the project directory, you can run:
 
+## Up & Running
+
 ### `yarn start`
 
-Runs the app in the development mode @ [http://localhost:3000](http://localhost:3000).
+Runs the app in the development mode @ [http://localhost:3000](http://localhost:3000) (⚠️ currently not supported).
 
 ### `yarn mock`
 
 Runs the app in the development mode @ [http://localhost:3001](http://localhost:3000) w/ json-server.
+
+## Testing
 
 ### `yarn test`
 
@@ -103,6 +107,26 @@ Executes the test runner without the interactive watch mode.
 ### `yarn test:coverage`
 
 Executes the test runner and generates the report.
+
+## Checks
+
+### `yarn lint`
+
+Checks all the files of the project according to the `.eslintrc.js` pre stablished configuration.
+
+### `yarn lint:fix`
+
+Fixes all the files of the project according to the `.eslintrc.js` pre stablished configuration.
+
+### `yarn prettier`
+
+Checks all the files of the project according to the `.prettierrc` pre stablished configuration.
+
+### `yarn prettier:fix`
+
+Fixes all the files of the project according to the `.prettierrc` pre stablished configuration.
+
+## Deploy
 
 ### `yarn build`
 
@@ -122,7 +146,7 @@ This will help you to use the defined coding style at the `.editoronfig` file du
 
 This will help you to use the defined coding style at the `.eslintrc` file during development.
 
-### [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest#the-aim) & [Jest Runner](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+### [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest) & [Jest Runner](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 This will help you run and debug your `*.test.js` file during file during test-development.
 

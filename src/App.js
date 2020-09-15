@@ -12,6 +12,12 @@ import CenteredContent from './components/Layout/CenteredContent';
 import SessionTimeoutDialog from './components/SessionTimeout/SessionTimeoutDialog';
 import InformationZone from './components/InformationZone/InformationZone';
 
+const style = {
+  emptySpace: {
+    paddingTop: '44px',
+  },
+};
+
 function App() {
   const { t } = useTranslation();
 
@@ -19,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Helmet title={t('helmet.title.app')} />
       <Shell title={t('shell.title')} />
-      <div style={{ paddingTop: '44px' }} />
+      <div style={style.emptySpace} />
       <ErrorBoundary>
         <CenteredContent>
           <Routes />
