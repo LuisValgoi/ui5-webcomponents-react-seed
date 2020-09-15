@@ -21,7 +21,7 @@ function useOperation(reactQueryKey, operation, urlKey, dataParam, config) {
       return res.data;
     },
     {
-      staleTime: Constants.REACT_QUERY.STALE_TIME,
+      staleTime: FIVE_MINUTES_IN_MILLISECONDS,
     },
   );
 
