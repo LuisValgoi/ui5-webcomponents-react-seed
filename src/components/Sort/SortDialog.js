@@ -3,9 +3,9 @@ import { Button, ButtonDesign, Dialog, FlexBox, FlexBoxJustifyContent, List, Sta
 import { spacing } from '@ui5/webcomponents-react-base';
 import { useTranslation } from 'react-i18next';
 
-export default function SortDialog({open}) {
+export default function SortDialog({ open }) {
   const dialogRef = useRef(null);
-  const listData = ["1", "3", "abc"];
+  const listData = ['1', '3', 'abc'];
   const [openDialog, setOpenDialog] = useState(false);
   const { t } = useTranslation();
 
@@ -20,29 +20,20 @@ export default function SortDialog({open}) {
   const onCloseSortDialog = () => {
     setOpenDialog(false);
     return;
-  }
+  };
 
   const onApplySort = () => {
     setOpenDialog(false);
     return;
-  }
+  };
 
   const getFooter = () => {
     return (
-      <FlexBox
-        justifyContent={FlexBoxJustifyContent.End}
-        style={{ ...spacing.sapUiTinyMargin, width: '100%' }}
-      >
-        <Button
-          design={ButtonDesign.Transparent}
-          onClick={onCloseSortDialog}
-        >
+      <FlexBox justifyContent={FlexBoxJustifyContent.End} style={{ ...spacing.sapUiTinyMargin, width: '100%' }}>
+        <Button design={ButtonDesign.Transparent} onClick={onCloseSortDialog}>
           {t('sort.dialog.close')}
         </Button>
-        <Button
-          design="Emphasized"
-          onClick={onApplySort}
-        >
+        <Button design="Emphasized" onClick={onApplySort}>
           {t('sort.dialog.apply')}
         </Button>
       </FlexBox>
@@ -50,13 +41,12 @@ export default function SortDialog({open}) {
   };
 
   return (
-    <Dialog
-      ref={dialogRef}
-      headerText={t('sort.dialog.title')}
-      footer={getFooter()}>
+    <Dialog ref={dialogRef} headerText={t('sort.dialog.title')} footer={getFooter()}>
       <List>
         {listData.map((item) => (
-          <StandardListItem key={item} info={item}>{item}</StandardListItem>
+          <StandardListItem key={item} info={item}>
+            {item}
+          </StandardListItem>
         ))}
       </List>
 
@@ -103,7 +93,6 @@ export default function SortDialog({open}) {
           ))}
         </FlexBoxColumnWrapper>
       </div> */}
-
     </Dialog>
   );
 }

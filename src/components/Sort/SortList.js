@@ -4,15 +4,15 @@ import { useTranslation } from 'react-i18next';
 import SortDialog from './SortDialog';
 
 export default function SortList() {
-  const listData = ["1", "3", "abc"];
-  const [ openSort, setOpenSort ] = useState(false);
+  const listData = ['1', '3', 'abc'];
+  const [openSort, setOpenSort] = useState(false);
   const { t } = useTranslation();
 
   const handleOpenDialog = () => {
     setOpenSort(false);
     setOpenSort(true);
     return;
-  }
+  };
 
   return (
     <div>
@@ -20,11 +20,11 @@ export default function SortList() {
       <SortDialog open={openSort} />
       <List>
         {listData.map((item) => (
-          <StandardListItem key={item} info={item}>{item}</StandardListItem>
+          <StandardListItem key={item} info={item}>
+            {item}
+          </StandardListItem>
         ))}
       </List>
     </div>
   );
 }
-
-

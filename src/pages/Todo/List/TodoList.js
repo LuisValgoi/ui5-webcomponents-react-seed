@@ -20,7 +20,7 @@ export default function TodoList() {
       <ComponentValidator allowedAuthorities={['canAccessDropApplication']} authorityKey="permissions">
         <HyperLink text="Drop Application (this is a restricted text and you should not see unless you have access)" />
       </ComponentValidator>
-      <SortList/>
+      <SortList />
     </>
   );
 }
