@@ -5,13 +5,17 @@ import Request from '../util/Request';
 import Constants from '../util/Constants';
 
 function useOperation(reactQueryKey, operation, urlKey, dataParam, config) {
-  const { data, status } = useQuery(reactQueryKey, async () => {
-    const url = UrlProvider.getUrl(urlKey);
-    const res = await Request[operation](url, dataParam, config);
-    return res.data;
-  }, {
-    staleTime: Constants.REACT_QUERY.STALE_TIME
-  });
+  const { data, status } = useQuery(
+    reactQueryKey,
+    async () => {
+      const url = UrlProvider.getUrl(urlKey);
+      const res = await Request[operation](url, dataParam, config);
+      return res.data;
+    },
+    {
+      staleTime: Constants.REACT_QUERY.STALE_TIME,
+    },
+  );
 
   return { data, status };
 }
