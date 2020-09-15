@@ -17,14 +17,14 @@ const SessionTimeoutDialog = () => {
     headerText: t('session.expired'),
     closeButtonText: t('session.expired.button.reload'),
     innerText: t('session.expired.text'),
-    onClose: () => window.location.reload()
+    onClose: () => window.location.reload(),
   };
   const WARNING_MODE = {
     type: Type.Warning,
     headerText: t('session.warning.expired'),
     closeButtonText: t('session.expired.button.close'),
     innerText: t('session.warning.expired.text'),
-    onClose: null
+    onClose: null,
   };
   const [options, setOptions] = useState(TIMEOUT_MODE);
   const ACTIVITY_EVENTS = ['click', 'focus', 'blur', 'keyup', 'keydown', 'mousemove', 'scroll'];
@@ -39,7 +39,6 @@ const SessionTimeoutDialog = () => {
       if (sessionIntervalCount >= SESSION.REFRESH_WARNING && sessionIntervalCount < SESSION.REFRESH_LIMIT) {
         setOptions(WARNING_MODE);
         dialogRef.current.open();
-
       } else if (sessionIntervalCount >= SESSION.REFRESH_LIMIT) {
         clearInterval(sessionIntervalFinder);
         setOptions(TIMEOUT_MODE);
@@ -51,11 +50,11 @@ const SessionTimeoutDialog = () => {
   });
 
   const handleUserActivity = () => {
-    ACTIVITY_EVENTS.forEach(EVENT => {
+    ACTIVITY_EVENTS.forEach((EVENT) => {
       window.addEventListener(EVENT, () => {
         sessionIntervalCount = 0;
       });
-    })
+    });
   };
 
   return (
@@ -66,7 +65,8 @@ const SessionTimeoutDialog = () => {
       onClose={options.onClose}
       headerText={options.headerText}
       closeButtonText={options.closeButtonText}
-      innerText={options.innerText} />
+      innerText={options.innerText}
+    />
   );
 };
 
