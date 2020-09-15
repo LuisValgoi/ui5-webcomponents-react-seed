@@ -8,5 +8,9 @@
   "page.error.alt": "Erro",
   "page.notfound.text": "Hmmm, não conseguimos encontrar esta página",
   "page.notfound.alt": "Não Encontrado",
-  "page.fallback.reload.text": "Recarregar"
+  "page.fallback.reload.text": "Recarregar",
+  "sort.button.title": "Ordenar",
+  "sort.dialog.close": "Fechar",
+  "sort.dialog.apply": "Aplicar",
+  "sort.dialog.title": "Sort List"
 }
