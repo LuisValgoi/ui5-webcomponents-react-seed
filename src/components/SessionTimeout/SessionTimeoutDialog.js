@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
 import InformationDialog, { Type } from '../InformationDialog/InformationDialog';
+import i18n from '../../util/i18n';
 
 const SESSION = {
   TIMEOUT_INTERVAL: 60000,
@@ -8,51 +8,52 @@ const SESSION = {
   REFRESH_WARNING: 13,
 };
 
-const SessionTimeoutDialog = () => {
-  const dialogRef = useRef(null);
+const TIMEOUT_MODE = {
+  type: Type.Error,
+  headerText: i18n.t('session.expired'),
+  closeButtonText: i18n.t('session.expired.button.reload'),
+  innerText: i18n.t('session.expired.text'),
+  onClose: () => window.location.reload(),
+};
 
-  const { t } = useTranslation();
-  const TIMEOUT_MODE = {
-    type: Type.Error,
-    headerText: t('session.expired'),
-    closeButtonText: t('session.expired.button.reload'),
-    innerText: t('session.expired.text'),
-    onClose: () => window.location.reload(),
-  };
-  const WARNING_MODE = {
-    type: Type.Warning,
-    headerText: t('session.warning.expired'),
-    closeButtonText: t('session.expired.button.close'),
-    innerText: t('session.warning.expired.text'),
-    onClose: null,
-  };
-  const [options, setOptions] = useState(TIMEOUT_MODE);
+const WARNING_MODE = {
+  type: Type.Warning,
+  headerText: i18n.t('session.warning.expired'),
+  closeButtonText: i18n.t('app.generics.close'),
+  innerText: i18n.t('session.warning.expired.text'),
+  onClose: null,
+};
+
+const SessionTimeoutDialog = ({ hasExpiredLimit = SESSION.REFRESH_LIMIT, isExpiringLimit = SESSION.REFRESH_WARNING }) => {
+  const dialogRef = useRef(null);
   const ACTIVITY_EVENTS = ['click', 'focus', 'blur', 'keyup', 'keydown', 'mousemove', 'scroll'];
-  let sessionIntervalCount = 1;
+  const [sessionIntervalCount, setSessionIntervalCount] = useState(1);
+  const [options, setOptions] = useState(TIMEOUT_MODE);
+  let sessionIntervalFinder = null;
 
   useEffect(() => {
     handleUserActivity();
   });
 
   useEffect(() => {
-    const sessionIntervalFinder = setInterval(() => {
-      if (sessionIntervalCount >= SESSION.REFRESH_WARNING && sessionIntervalCount < SESSION.REFRESH_LIMIT) {
+    sessionIntervalFinder = setInterval(() => {
+      if (sessionIntervalCount >= isExpiringLimit && sessionIntervalCount < hasExpiredLimit) {
         setOptions(WARNING_MODE);
         dialogRef.current.open();
-      } else if (sessionIntervalCount >= SESSION.REFRESH_LIMIT) {
-        clearInterval(sessionIntervalFinder);
+      } else if (sessionIntervalCount >= hasExpiredLimit) {
         setOptions(TIMEOUT_MODE);
         dialogRef.current.open();
       }
 
-      sessionIntervalCount++;
+      setSessionIntervalCount(sessionIntervalCount + 1);
     }, SESSION.TIMEOUT_INTERVAL);
   });
 
   const handleUserActivity = () => {
     ACTIVITY_EVENTS.forEach((EVENT) => {
       window.addEventListener(EVENT, () => {
-        sessionIntervalCount = 0;
+        setSessionIntervalCount(0);
+        clearInterval(sessionIntervalFinder);
       });
     });
   };
