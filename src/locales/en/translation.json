@@ -13,7 +13,6 @@
   "session.expired.button.reload": "Reload",
   "session.expired.text": "Your session has expired. Please reload to continue.",
   "session.warning.expired": "Session Almost Expiring",
-  "session.expired.button.close": "Close",
   "session.warning.expired.text": "If you not perform an action within 2 minutes, your session will expire.",
   "app.generics.close": "Close"
 }

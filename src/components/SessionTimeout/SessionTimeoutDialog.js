@@ -19,7 +19,7 @@ const TIMEOUT_MODE = {
 const WARNING_MODE = {
   type: Type.Warning,
   headerText: i18n.t('session.warning.expired'),
-  closeButtonText: i18n.t('session.expired.button.close'),
+  closeButtonText: i18n.t('app.generics.close'),
   innerText: i18n.t('session.warning.expired.text'),
   onClose: null,
 };
