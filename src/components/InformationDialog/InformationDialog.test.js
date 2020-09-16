@@ -1,19 +1,48 @@
-import React from 'react';
+import React, {useRef} from 'react'
 
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '../../util/TestSetup';
+import { render, screen } from '../../util/TestSetup';
 
-import InformationDialog from './InformationDialog';
+import InformationDialog, { Type } from './InformationDialog'
 
 describe('InformationDialog.js Test Suite', () => {
-  beforeAll(() => {
-    const dialog = <InformationDialog />;
+  beforeEach(() => {
+    const dialog = (<InformationDialog
+      avoidEscapeClose
+      type={Type.Warning}
+      headerText={'Header text'}
+      closeButtonText={'Close'}
+      innerText={'Inner text'} />);
     render(dialog);
   });
 
   test('should match snapshot', () => {
-    const { asFragment } = render(<InformationDialog />);
+    const dialog = (<InformationDialog
+      avoidEscapeClose
+      type={Type.Warning}
+      headerText={'Header text'}
+      closeButtonText={'Close'}
+      innerText={'Inner text'} />);
 
+    const { asFragment } = render(dialog);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render', () => {
+    const dialog = screen.getByTestId('information-dialog');
+    expect(dialog).toBeInTheDocument();
+  });
+
+  test('should render child when not inner text is passed', () => {
+    const dialog = (<InformationDialog
+      avoidEscapeClose
+      type={Type.Warning}
+      headerText={'Header text'}
+      closeButtonText={'Close'}>
+        <div data-testid="information-dialog-child"></div>
+      </InformationDialog>);
+    render(dialog);
+    const child = screen.getByTestId('information-dialog-child');
+    expect(child).toBeInTheDocument();
   });
 });
