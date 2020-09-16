@@ -4,8 +4,8 @@ import i18n from '../../util/i18n';
 
 const SESSION = {
   TIMEOUT_INTERVAL: 60000,
-  REFRESH_LIMIT: 4,
-  REFRESH_WARNING: 2,
+  REFRESH_LIMIT: 15,
+  REFRESH_WARNING: 13,
 };
 
 const TIMEOUT_MODE = {
@@ -24,7 +24,7 @@ const WARNING_MODE = {
   onClose: null,
 };
 
-const SessionTimeoutDialog = () => {
+const SessionTimeoutDialog = ({ hasExpiredLimit = SESSION.REFRESH_LIMIT, isExpiringLimit = SESSION.REFRESH_WARNING }) => {
   const dialogRef = useRef(null);
   const ACTIVITY_EVENTS = ['click', 'focus', 'blur', 'keyup', 'keydown', 'mousemove', 'scroll'];
   const [sessionIntervalCount, setSessionIntervalCount] = useState(1);
@@ -37,10 +37,10 @@ const SessionTimeoutDialog = () => {
 
   useEffect(() => {
     sessionIntervalFinder = setInterval(() => {
-      if (sessionIntervalCount >= SESSION.REFRESH_WARNING && sessionIntervalCount < SESSION.REFRESH_LIMIT) {
+      if (sessionIntervalCount >= isExpiringLimit && sessionIntervalCount < hasExpiredLimit) {
         setOptions(WARNING_MODE);
         dialogRef.current.open();
-      } else if (sessionIntervalCount >= SESSION.REFRESH_LIMIT) {
+      } else if (sessionIntervalCount >= hasExpiredLimit) {
         setOptions(TIMEOUT_MODE);
         dialogRef.current.open();
       }
