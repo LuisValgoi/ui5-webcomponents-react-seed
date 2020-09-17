@@ -72,10 +72,6 @@ Once you have created your project using the `ui5-webcomponents-react-seed` temp
 
 # Hooks Included
 
-- `useBrowser`: Which identifies the user browser.
-
-- `useIsMobile`: Which identifies the user device perspective.
-
 - `useRequest`: Which includes `get`, `post`, `patch`, `delete`, `put` HTTP helpers.
 
 - `useAuthority`: Which includes `hasAccess` helpers.
