@@ -2,53 +2,34 @@
 
 exports[`InformationDialog.js Test Suite should match snapshot 1`] = `
 <DocumentFragment>
-  <ui5-dialog
-    data-testid="information-dialog"
-    slot="header"
-  >
-    <div
-      class="FlexBox-flexBox-0-2-1 FlexBox-flexBoxDirectionRowReverse-0-2-11 FlexBox-justifyContentStart-0-2-3 FlexBox-alignItemsCenter-0-2-14 FlexBox-flexWrapNoWrap-0-2-17"
-      slot="footer"
-      style="margin: 0.5rem;"
-    >
-      <ui5-button
-        design="Transparent"
-      >
-        Close
-      </ui5-button>
-    </div>
-    <div
-      class="FlexBox-flexBox-0-2-1 FlexBox-flexBoxDirectionRow-0-2-10 FlexBox-justifyContentCenter-0-2-5 FlexBox-alignItemsCenter-0-2-14 FlexBox-flexWrapNoWrap-0-2-17"
-      slot="header"
-      style="padding: 1rem;"
-    >
-      <ui5-icon
-        name="message-warning"
-        style="width: 1.5rem; height: 1.5rem; color: rgb(254, 182, 10);"
-      />
-      <span
-        class="Text-text-0-2-20"
-        style="margin-left: 0.5rem; line-height: 20px;"
-        title="Header text"
-      >
-        Header text
-      </span>
-    </div>
-    <div
-      style="padding: 1rem;"
-    >
-      <div
-        class="FlexBox-flexBox-0-2-1 FlexBox-flexBoxDirectionColumn-0-2-8 FlexBox-justifyContentStart-0-2-3 FlexBox-alignItemsStretch-0-2-15 FlexBox-flexWrapNoWrap-0-2-17"
-      >
-        <span
-          class="Text-text-0-2-20"
-          style="margin-left: 0.5rem; line-height: 20px;"
-          title="Inner text"
-        >
-          Inner text
-        </span>
-      </div>
-    </div>
-  </ui5-dialog>
+  Dialog {
+    "_domRefReadyPromise": Promise {
+      "_deferredResolve": [Function],
+    },
+    "_firePropertyChange": false,
+    "_fullyConnected": false,
+    "_inDOM": false,
+    "_monitoredChildProps": Map {},
+    "_shouldInvalidateParent": false,
+    "_state": Object {
+      "_blockLayerHidden": false,
+      "_disableInitialFocus": false,
+      "ariaLabel": undefined,
+      "default": Array [],
+      "footer": Array [],
+      "header": Array [],
+      "headerText": "",
+      "initialFocus": "",
+      "onPhone": false,
+      "opened": false,
+      "preventFocusRestore": false,
+      "stretch": false,
+    },
+    "_upToDate": false,
+    "staticAreaItem": StaticAreaItem {
+      "_rendered": false,
+      "ui5ElementContext": [Circular],
+    },
+  }
 </DocumentFragment>
 `;
