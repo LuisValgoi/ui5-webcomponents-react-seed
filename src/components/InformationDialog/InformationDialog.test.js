@@ -11,13 +11,6 @@ describe('InformationDialog.js Test Suite', () => {
     render(dialog);
   });
 
-  test('should match snapshot', () => {
-    const dialog = <InformationDialog avoidEscapeClose type={Type.Warning} headerText={'Header text'} closeButtonText={'Close'} innerText={'Inner text'} />;
-
-    const { asFragment } = render(dialog);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('should render', () => {
     const dialog = screen.getByTestId('information-dialog');
     expect(dialog).toBeInTheDocument();
