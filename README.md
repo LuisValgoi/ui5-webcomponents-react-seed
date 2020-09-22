@@ -175,6 +175,10 @@ Used to identify the browsers culture and change the applications text according
 
 Used to identify the device, browser, ratios and etc.
 
+### `react-query-devtools``
+
+Used to help developers during the React Query information flow.
+
 ### `commitlint`
 
 Used to check the commits before actually commits.
