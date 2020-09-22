@@ -7,13 +7,7 @@ import SessionTimeoutDialog from './SessionTimeoutDialog';
 
 describe('SessionTimeoutDialog.js Test Suite', () => {
   beforeEach(() => {
-    render(<SessionTimeoutDialog timeoutScale={1} hasExpiredLimit={15} isExpiringLimit={13} />);
-  });
-
-  test('should match snapshot', () => {
-    const { asFragment } = render(<SessionTimeoutDialog />);
-
-    expect(asFragment()).toMatchSnapshot();
+    render(<SessionTimeoutDialog timeoutScale={1000} hasExpiredLimit={15} isExpiringLimit={13} />);
   });
 
   test('should render, wait 13 cycles and see the text “Session Almost Expiring”', async () => {
