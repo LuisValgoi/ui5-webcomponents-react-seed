@@ -29,54 +29,41 @@
 - `npx create-react-app PROJECT_NAME --template ui5-webcomponents-react-seed`;
 - cd into `PROJECT_NAME`;
 - (no need to run `yarn install` since it already installs it for you);
-- run `yarn test:ci` or any other;
-- have fun with the other scripts;
+- run the available scripts.
 
 PS.: It is important to add the `--template ui5-webcomponents-react-seed` at the end to get our template.
 
-# Getting Started
-
-Once you have created your project using the `ui5-webcomponents-react-seed` template, you can start by:
-
-- `yarn mock`: To run this project with json-server.
-
-- `yarn start`: To run this project with backend (⚠️ currently not supported).
-
 # Configuration Included
 
-- JEST Up & Runnning.
+- JEST Up & Runnning;
 
-- ESLint & EditorConfig Up & Running.
+- ESLint & EditorConfig Up & Running;
 
-- CommitLint Up & Running.
+- CommitLint Up & Running;
 
-- Enviroment Variables Up & Running.
+- Enviroment Variables Up & Running;
 
-- Internalization Up & Running.
+- Internalization Up & Running;
 
-- PR Template.
+- PR Template;
 
-- IE Support.
+- IE Support;
 
 - Multiple Scripts.
 
 # Engine Included
 
-- Fallback Engine (`<ErrorBoundary />`, `<NotFound />` and `<Error />`).
+- Fallback Engine (`<ErrorBoundary />`, `<NotFound />` and `<Error />`);
 
-- MockServer Engine (w/ `json-server`).
+- MockServer Engine (w/ `json-server`);
 
-- HTTP Request Engine (w/ `Request` and `URLProvider`).
+- HTTP Request Engine (w/ `Request` and `URLProvider`);
 
-- Permission Engine (w/ `RouteValidator` and `ComponentValidator`)
+- Permission Engine (w/ `RouteValidator` and `ComponentValidator`).
 
 # Hooks Included
 
-- `useBrowser`: Which identifies the user browser.
-
-- `useIsMobile`: Which identifies the user device perspective.
-
-- `useRequest`: Which includes `get`, `post`, `patch`, `delete`, `put` HTTP helpers.
+- `useRequest`: Which includes `get`, `post`, `patch`, `delete`, `put` HTTP helpers;
 
 - `useAuthority`: Which includes `hasAccess` helpers.
 
@@ -88,7 +75,9 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode @ [http://localhost:3000](http://localhost:3000) (⚠️ currently not supported).
+Runs the app in the development mode @ [http://localhost:3000](http://localhost:3000).
+
+⚠️ It requires an AppRouter or a BackEnd up & running @ `<domain>:<port>/api`.
 
 ### `yarn mock`
 
@@ -181,6 +170,10 @@ Used to translate strings and text in the application following the Internationa
 ### `i18next-browser-languagedetector`
 
 Used to identify the browsers culture and change the applications text accordingly.
+
+### `react-device-detect``
+
+Used to identify the device, browser, ratios and etc.
 
 ### `commitlint`
 
