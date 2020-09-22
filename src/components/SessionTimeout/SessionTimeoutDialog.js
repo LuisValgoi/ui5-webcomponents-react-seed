@@ -29,14 +29,9 @@ const SessionTimeoutDialog = ({ timeoutScale = SESSION.TIMEOUT_INTERVAL, hasExpi
   const ACTIVITY_EVENTS = ['click', 'focus', 'blur', 'keyup', 'keydown', 'mousemove', 'scroll'];
   const [sessionIntervalCount, setSessionIntervalCount] = useState(1);
   const [options, setOptions] = useState(WARNING_MODE);
-  let sessionIntervalFinder = null;
 
   useEffect(() => {
-    handleUserActivity();
-  });
-
-  useEffect(() => {
-    sessionIntervalFinder = setInterval(() => {
+    let sessionIntervalFinder = setInterval(() => {
       if (sessionIntervalCount >= isExpiringLimit && sessionIntervalCount < hasExpiredLimit) {
         setOptions(WARNING_MODE);
         dialogRef.current && dialogRef.current.open();
@@ -47,9 +42,10 @@ const SessionTimeoutDialog = ({ timeoutScale = SESSION.TIMEOUT_INTERVAL, hasExpi
 
       setSessionIntervalCount(sessionIntervalCount + 1);
     }, timeoutScale);
+    handleUserActivity(sessionIntervalFinder);
   });
 
-  const handleUserActivity = () => {
+  const handleUserActivity = (sessionIntervalFinder) => {
     ACTIVITY_EVENTS.forEach((EVENT) => {
       window.addEventListener(EVENT, () => {
         setSessionIntervalCount(0);
