@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { useHistory } from 'react-router-dom';
 import { MobileView, BrowserView, IEView, isMobile, isTablet, isDesktop, isIE, isChrome, isOpera } from 'react-device-detect';
 
 import HyperLink from '../../../components/HyperLink/HyperLink';
