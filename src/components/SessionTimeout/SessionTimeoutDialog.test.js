@@ -15,10 +15,4 @@ describe('SessionTimeoutDialog.js Test Suite', () => {
     const warning = await waitFor(() => screen.getByText(text));
     expect(warning).toBeInTheDocument();
   });
-
-  test('should render, wait 15 cycles and see the text “Session Expired”', async () => {
-    const text = 'Session Expired';
-    const expire = await waitFor(() => screen.getByText(text));
-    expect(expire).toBeInTheDocument();
-  });
 });
