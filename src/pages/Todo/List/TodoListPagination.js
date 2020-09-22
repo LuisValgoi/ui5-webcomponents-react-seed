@@ -17,6 +17,7 @@ export default function TodoListPagination() {
         <Spinner />
       ) : (
         <>
+          <h3>{`Records (${resolvedData.numberOfElements} / ${resolvedData.totalElements})`}</h3>
           <List
             busy={false}
             footerText={undefined}
