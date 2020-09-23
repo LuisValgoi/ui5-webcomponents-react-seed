@@ -2,7 +2,6 @@ import React from 'react';
 
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '../../util/TestSetup';
-
 import InformationDialog, { Type } from './InformationDialog';
 
 describe('InformationDialog.js Test Suite', () => {
