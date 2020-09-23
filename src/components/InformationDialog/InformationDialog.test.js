@@ -6,14 +6,11 @@ import { render, screen } from '../../util/TestSetup';
 import InformationDialog, { Type } from './InformationDialog';
 
 describe('InformationDialog.js Test Suite', () => {
-  beforeEach(() => {
+  test('should render', () => {
     const dialog = <InformationDialog avoidEscapeClose type={Type.Warning} headerText={'Header text'} closeButtonText={'Close'} innerText={'Inner text'} />;
     render(dialog);
-  });
-
-  test('should render', () => {
-    const dialog = screen.getByTestId('information-dialog');
-    expect(dialog).toBeInTheDocument();
+    const infoDialog = screen.getByTestId('information-dialog');
+    expect(infoDialog).toBeInTheDocument();
   });
 
   test('should render child when not inner text is passed', () => {
