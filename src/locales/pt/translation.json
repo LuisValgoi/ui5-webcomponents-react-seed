@@ -8,5 +8,11 @@
   "page.error.alt": "Erro",
   "page.notfound.text": "Hmmm, não conseguimos encontrar esta página",
   "page.notfound.alt": "Não Encontrado",
-  "page.fallback.reload.text": "Recarregar"
+  "page.fallback.reload.text": "Recarregar",
+  "session.expired": "Sessão expirada",
+  "session.expired.button.reload": "Recarregar",
+  "session.expired.text": "Sua sessão expirou. Recarregue para continuar.",
+  "session.warning": "Sessão quase expirada",
+  "session.warning.text": "Se você não efetuar uma ação nos próximos 2 minutos, a sua sessão irá expirar.",
+  "app.generics.close": "Fechar"
 }

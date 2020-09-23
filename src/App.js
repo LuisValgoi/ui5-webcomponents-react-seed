@@ -6,9 +6,10 @@ import { Helmet } from 'react-helmet';
 import ErrorBoundary from './pages/Fallback/ErrorBoundary';
 import Shell from './components/Shell/Shell';
 import Routes from './routes/Routes';
-
 import './App.css';
 import CenteredContent from './components/Layout/CenteredContent';
+import SessionTimeoutDialog from './components/SessionTimeout/SessionTimeoutDialog';
+import InformationZone from './components/InformationZone/InformationZone';
 
 const style = {
   emptySpace: {
@@ -29,6 +30,9 @@ function App() {
           <Routes />
         </CenteredContent>
       </ErrorBoundary>
+      <InformationZone>
+        <SessionTimeoutDialog />
+      </InformationZone>
     </BrowserRouter>
   );
 }

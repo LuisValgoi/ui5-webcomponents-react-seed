@@ -1,14 +1,19 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { MobileView, BrowserView, IEView, isMobile, isTablet, isDesktop, isIE, isChrome, isOpera } from 'react-device-detect';
 
 import HyperLink from '../../../components/HyperLink/HyperLink';
 import BrowserURL from '../../../util/BrowserURL';
 import ComponentValidator from '../../../auth/Components/Validator';
+import InformationDialog, { Type } from '../../../components/InformationDialog/InformationDialog';
 
 export default function TodoList() {
+  const dialogRef = useRef(null);
   const history = useHistory();
+  const openInformationDialog = () => {
+    dialogRef.current.open();
+  };
 
   return (
     <>
@@ -23,6 +28,9 @@ export default function TodoList() {
         <h1>Component Validator</h1>
         <p>Drop Application (this is a restricted text and you should not see unless you have access)</p>
       </ComponentValidator>
+      <br />
+      <HyperLink onClick={openInformationDialog} text="Open Information Dialog" />
+      <InformationDialog avoidEscapeClose dialogRef={dialogRef} type={Type.Warning} headerText={'Header text'} closeButtonText={'Close'} innerText={'Inner text'} />
 
       <h1>Device Detect</h1>
       <MobileView>
