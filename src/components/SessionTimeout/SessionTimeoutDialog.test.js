@@ -2,7 +2,6 @@ import React from 'react';
 
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen, waitFor } from '../../util/TestSetup';
-
 import SessionTimeoutDialog from './SessionTimeoutDialog';
 
 describe('SessionTimeoutDialog.js Test Suite', () => {
