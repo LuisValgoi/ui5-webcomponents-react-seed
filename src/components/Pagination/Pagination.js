@@ -36,40 +36,46 @@ export const Pagination = ({ shouldDisableAll, numberOfElements, totalPages, sel
   }
 
   return (
-    <FlexBox alignItems={FlexBoxAlignItems.Start} style={style} justifyContent={FlexBoxJustifyContent.Center}>
-      <Button disabled={disablePrevious || shouldDisableAll} design={ButtonDesign.Transparent} onClick={setPreviousPage}>
+    <FlexBox data-testid="pagination-wrapper" alignItems={FlexBoxAlignItems.Start} style={style} justifyContent={FlexBoxJustifyContent.Center}>
+      <Button data-testid="leftarrow-pagination-wrapper" disabled={disablePrevious || shouldDisableAll} design={ButtonDesign.Transparent} onClick={setPreviousPage}>
         {'<'}
       </Button>
 
       {hasMorePreviousPages && (
-        <Button disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(morePreviousPage)}>
+        <Button
+          data-testid="morePreviousPage-pagination-wrapper"
+          disabled={shouldDisableAll}
+          design={ButtonDesign.Transparent}
+          style={spacing.sapUiTinyMarginEnd}
+          onClick={() => setPage(morePreviousPage)}
+        >
           {morePreviousPage + 1}
         </Button>
       )}
 
       {hasPreviousPage && (
-        <Button disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(previousPage)}>
+        <Button data-testid="previousPage-pagination-wrapper" disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(previousPage)}>
           {previousPage + 1}
         </Button>
       )}
 
-      <Button disabled={shouldDisableAll} style={spacing.sapUiTinyMarginEnd} design={ButtonDesign.Emphasized}>
+      <Button data-testid="selectedPage-pagination-wrapper" disabled={shouldDisableAll} style={spacing.sapUiTinyMarginEnd} design={ButtonDesign.Emphasized}>
         {selectedPage + 1}
       </Button>
 
       {hasNextPage && (
-        <Button disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(nextPage)}>
+        <Button data-testid="nextPage-pagination-wrapper" disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(nextPage)}>
           {nextPage + 1}
         </Button>
       )}
 
       {hasMoreNextPages && (
-        <Button disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(moreNextPage)}>
+        <Button data-testid="moreNextPage-pagination-wrapper" disabled={shouldDisableAll} design={ButtonDesign.Transparent} style={spacing.sapUiTinyMarginEnd} onClick={() => setPage(moreNextPage)}>
           {moreNextPage + 1}
         </Button>
       )}
 
-      <Button disabled={disableNext || shouldDisableAll} design={ButtonDesign.Transparent} onClick={setNextPage}>
+      <Button data-testid="afterarrow-pagination-wrapper" disabled={disableNext || shouldDisableAll} design={ButtonDesign.Transparent} onClick={setNextPage}>
         {'>'}
       </Button>
     </FlexBox>
