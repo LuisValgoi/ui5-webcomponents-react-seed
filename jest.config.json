@@ -1,6 +1,6 @@
 {
   "setupFiles": [
-    "<rootDir>/src/util/TestEnv.js"
+    "<rootDir>/src/setupTests.js"
   ],
   "testRegex": "/*.test.js$",
   "collectCoverage": true,
