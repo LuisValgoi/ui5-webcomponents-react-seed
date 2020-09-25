@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '@testing-library/jest-dom/extend-expect';
-import { render, screen, fireEvent, waitFor } from '../../util/TestSetup';
+import { render, screen, fireEvent } from '../../util/TestSetup';
 
 import { Pagination } from './Pagination';
 
