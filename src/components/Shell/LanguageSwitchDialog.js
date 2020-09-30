@@ -1,24 +1,31 @@
 import React from 'react';
 
-import { ComboBoxItem } from '@ui5/webcomponents-react/lib/ComboBoxItem';
-import { ComboBox } from '@ui5/webcomponents-react/lib/ComboBox';
+import { Option  } from '@ui5/webcomponents-react/lib/Option';
+import { Select } from '@ui5/webcomponents-react/lib/Select';
 import { Dialog } from '@ui5/webcomponents-react/lib/Dialog';
+import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
 
 const LanguageSwitchDialog = ({dialogRef}) => {
-
-  const switchTheme = () => {
-    dialogRef.current.open()
+  const onChange = (event) => {
+    setTheme(event.detail.selectedOption.dataset.value);
   };
+  const themeOptions = [
+    { value: 'sap_fiori_3', title: 'Default' },
+    { value: 'sap_belize_hcb', title: 'High Contrast Black' },    
+    { value: 'sap_belize_hcw', title: 'High Contrast White' },
+  ];  
 
   return (
     <Dialog ref={dialogRef}>
-        <ComboBox>
-            <ComboBoxItem text="ComboBox Entry 1" />
-            <ComboBoxItem text="ComboBox Entry 2" />
-            <ComboBoxItem text="ComboBox Entry 3" />
-            <ComboBoxItem text="ComboBox Entry 4" />
-            <ComboBoxItem text="ComboBox Entry 5" />
-        </ComboBox>
+      <Select onChange={onChange}>
+        {themeOptions && themeOptions.map(option => {
+          return (
+            <Option key={option.value} data-value={option.value}>
+              {option.title}
+            </Option>
+          )
+        })}
+      </Select>
     </Dialog>
   );
 };
