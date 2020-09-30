@@ -8,6 +8,9 @@ import '@ui5/webcomponents/dist/Assets.js';
 import '@ui5/webcomponents-fiori/dist/Assets.js';
 import '@ui5/webcomponents-react/dist/Assets';
 
+import '@ui5/webcomponents/dist/Assets';
+import '@ui5/webcomponents-fiori/dist/Assets'; // only if you are using the ShellBar, Product Switch or the Upload Collection
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 

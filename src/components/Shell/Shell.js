@@ -8,6 +8,7 @@ import { AvatarShape } from '@ui5/webcomponents-react/lib/AvatarShape';
 import { AvatarSize } from '@ui5/webcomponents-react/lib/AvatarSize';
 import BrowserProvider from '../../util/URL/BrowserProvider';
 import PopoverListItems from '../Popover/List/PopoverListItems';
+import LanguageSwitchDialog from './LanguageSwitchDialog';
 
 const style = {
   shell: {
@@ -24,6 +25,10 @@ const Shell = ({ title, ...props }) => {
   const { t } = useTranslation();
   const history = useHistory();
   const popoverConfigItemsRef = useRef(null);
+  const themeSwitchRef = useRef(null);
+  const openThemeSwitch = () => {
+    themeSwitchRef.current.open()
+  };
   const popoverItemsInterface = [
     {
       children: t('shell.button.user.settings.item.languageSwitch'),
@@ -33,7 +38,7 @@ const Shell = ({ title, ...props }) => {
     {
       children: t('shell.button.user.settings.item.themeSwitch'),
       icon: 'customize',
-      onClick: () => alert('activate theme switch dialog'),
+      onClick: () => openThemeSwitch(),
     },
   ];
 
@@ -51,6 +56,7 @@ const Shell = ({ title, ...props }) => {
       />
       <div style={style.emptySpace} />
       <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItemsInterface} />
+      <LanguageSwitchDialog dialogRef={themeSwitchRef}></LanguageSwitchDialog>
     </>
   );
 };
