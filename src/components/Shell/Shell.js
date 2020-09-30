@@ -29,7 +29,7 @@ const Shell = ({ title, ...props }) => {
   const openThemeSwitch = () => {
     themeSwitchRef.current.open()
   };
-  const popoverItemsInterface = [
+  const popoverItems = [
     {
       children: t('shell.button.user.settings.item.languageSwitch'),
       icon: 'user-settings',
@@ -54,8 +54,8 @@ const Shell = ({ title, ...props }) => {
         onProfileClick={(e) => popoverConfigItemsRef.current.openBy(e.detail.targetRef)}
         {...props}
       />
-      <div style={style.emptySpace} />
-      <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItemsInterface} />
+      <div data-testid="emptySpace-wrapper" style={style.emptySpace} />
+      <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItems} />
       <LanguageSwitchDialog dialogRef={themeSwitchRef}></LanguageSwitchDialog>
     </>
   );
