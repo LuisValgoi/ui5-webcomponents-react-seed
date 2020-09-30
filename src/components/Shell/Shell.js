@@ -11,6 +11,9 @@ const style = {
     width: '100%',
     zIndex: 100,
   },
+  emptySpace: {
+    paddingTop: '44px',
+  },
 };
 
 const Shell = ({ title, ...props }) => {
@@ -18,14 +21,17 @@ const Shell = ({ title, ...props }) => {
   const history = useHistory();
 
   return (
-    <ShellBar
-      data-testid="shell-wrapper"
-      style={style.shell}
-      onLogoClick={() => history.push(BrowserProvider.HOME)}
-      primaryTitle={title}
-      logo={<img alt={t('shell.logo.alt')} src="https://sap.github.io/ui5-webcomponents/assets/images/sap-logo-svg.svg" />}
-      {...props}
-    />
+    <>
+      <ShellBar
+        data-testid="shell-wrapper"
+        style={style.shell}
+        onLogoClick={() => history.push(BrowserProvider.HOME)}
+        primaryTitle={title}
+        logo={<img alt={t('shell.logo.alt')} src="https://sap.github.io/ui5-webcomponents/assets/images/sap-logo-svg.svg" />}
+        {...props}
+      />
+      <div style={style.emptySpace} />
+    </>
   );
 };
 
