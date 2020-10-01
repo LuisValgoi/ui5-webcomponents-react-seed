@@ -21,6 +21,10 @@ export default function TodoList() {
       <HyperLink onClick={() => history.push(BrowserProvider.BUGGY)} text="Test Error Page" />
       <br />
 
+      <h1>Formik and Yup</h1>
+      <HyperLink onClick={() => history.push(BrowserProvider.TODO_FORM)} text="Form with Formik and Yup" />
+      <br />
+
       <ComponentValidator allowedAuthorities={['canAccessDropApplication']} authorityKey="permissions">
         <h1>Component Validator</h1>
         <p>Drop Application (this is a restricted text and you should not see unless you have access)</p>
