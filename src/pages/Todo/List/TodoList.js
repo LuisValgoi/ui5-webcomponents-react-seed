@@ -7,12 +7,13 @@ import HyperLink from '../../../components/HyperLink/HyperLink';
 import BrowserProvider from '../../../util/URL/BrowserProvider';
 import ComponentValidator from '../../../auth/Components/Validator';
 import TodoListPagination from './TodoListPagination';
+import CenteredContent from '../../../components/Layout/CenteredContent';
 
 export default function TodoList() {
   const history = useHistory();
 
   return (
-    <>
+    <CenteredContent>
       <Helmet title="List - TodoList App" />
       <h1>Routing</h1>
       <HyperLink onClick={() => history.push('/dontexist')} text="Test NotFound Page" />
@@ -46,6 +47,6 @@ export default function TodoList() {
 
       <h1>Pagination</h1>
       <TodoListPagination />
-    </>
+    </CenteredContent>
   );
 }
