@@ -16,8 +16,7 @@ const style = {
     width: '30%',
   },
   reloadButton: {
-    cursor: 'pointer',
-    color: 'var(--sapLinkColor)',
+    cursor: 'pointer'
   },
 };
 
