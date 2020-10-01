@@ -6,12 +6,14 @@ import TodoList from '../pages/Todo/List/TodoList';
 import NotFound from '../pages/Fallback/NotFound';
 import Buggy from '../pages/Fallback/Buggy';
 import RouteValidator from '../auth/Routes/Validator';
+import TodoForm from '../pages/Todo/Form/TodoForm';
 
 const Routes = () => {
   return (
     <Switch>
       <Redirect path={BrowserProvider.HOME} exact to={BrowserProvider.TODO_LIST} />
       <RouteValidator allowedAuthorities={['canAccessTodoListPage']} authorityKey="permissions" path={BrowserProvider.TODO_LIST} component={TodoList} />
+      <Route path={BrowserProvider.TODO_FORM} exact component={TodoForm} />
       <Route path={BrowserProvider.BUGGY} exact component={Buggy} />
       <Route path={BrowserProvider.NOT_FOUND} exact component={NotFound} />
       <Route path={BrowserProvider.ANY} component={NotFound} />
