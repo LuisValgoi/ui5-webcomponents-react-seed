@@ -9,11 +9,12 @@ import { Pagination } from '../../../components/Pagination/Pagination';
 
 import Constants from '../../../util/Constants';
 import BrowserProvider from '../../../util/browser/BrowserProvider';
+import APIProvider from '../../../util/api/url/APIProvider';
 
 export default function TodoListPaginatedItems() {
   const history = useHistory();
   const [page, setPage] = useState(0);
-  const { resolvedData, status } = usePaginatedGet(Constants.REACT_QUERY.KEYS.RQ_GET_TODO_LIST, page, 'GET_TODO_LIST');
+  const { resolvedData, status } = usePaginatedGet(Constants.REACT_QUERY.KEYS.RQ_GET_TODO_LIST, page, APIProvider.getUrl('GET_TODO_LIST'));
 
   const redirectToEditPage = (e) => {
     history.push(BrowserProvider.getUrl('TODO_EDIT', [{ value: e.detail.item.dataset.id }]));
@@ -27,7 +28,7 @@ export default function TodoListPaginatedItems() {
         <>
           <h3>{`Records (${resolvedData.numberOfElements} / ${resolvedData.totalElements})`}</h3>
           <List
-            busy={false}
+            busy={status === Constants.REACT_QUERY.CODES.LOADING}
             footerText={undefined}
             header={null}
             headerText={undefined}
