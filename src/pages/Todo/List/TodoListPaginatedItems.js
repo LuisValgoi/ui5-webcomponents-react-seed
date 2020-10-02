@@ -5,8 +5,9 @@ import { List } from '@ui5/webcomponents-react/lib/List';
 import { StandardListItem } from '@ui5/webcomponents-react/lib/StandardListItem';
 import { Spinner } from '@ui5/webcomponents-react';
 import { Pagination } from '../../../components/Pagination/Pagination';
+
 import Constants from '../../../util/Constants';
-import BrowserProvider from '../../../util/URL/Browser/BrowserProvider';
+import BrowserProvider from '../../../util/browser/BrowserProvider';
 
 export default function TodoListPaginatedItems({ history }) {
   const [page, setPage] = useState(0);

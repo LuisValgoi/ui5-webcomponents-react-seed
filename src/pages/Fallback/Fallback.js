@@ -6,7 +6,7 @@ import { FlexBoxAlignItems } from '@ui5/webcomponents-react/lib/FlexBoxAlignItem
 import { FlexBoxDirection } from '@ui5/webcomponents-react/lib/FlexBoxDirection';
 import { FlexBoxJustifyContent } from '@ui5/webcomponents-react/lib/FlexBoxJustifyContent';
 
-import BrowserProvider from '../../util/URL/Browser/BrowserProvider';
+import BrowserProvider from '../../util/browser/BrowserProvider';
 
 const style = {
   wrapper: {

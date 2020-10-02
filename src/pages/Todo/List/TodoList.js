@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { MobileView, BrowserView, IEView, isMobile, isTablet, isDesktop, isIE, isChrome, isOpera } from 'react-device-detect';
 
 import HyperLink from '../../../components/HyperLink/HyperLink';
-import BrowserProvider from '../../../util/URL/Browser/BrowserProvider';
-import ComponentValidator from '../../../auth/Components/Validator';
+import BrowserProvider from '../../../util/browser/BrowserProvider';
+import ComponentValidator from '../../../auth/components/Validator';
 import TodoListPaginatedItems from './TodoListPaginatedItems';
 import CenteredContent from '../../../components/Layout/CenteredContent';
 

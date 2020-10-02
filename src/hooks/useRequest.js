@@ -1,7 +1,7 @@
 import { usePaginatedQuery, useQuery } from 'react-query';
 
-import APIProvider from '../util/URL/API/APIProvider';
-import Request from '../util/Request/Request';
+import APIProvider from '../util/api/url/APIProvider';
+import Request from '../util/api/engine/Request';
 
 const FIVE_MINUTES_IN_MILLISECONDS = 1000 * 60 * 5;
 

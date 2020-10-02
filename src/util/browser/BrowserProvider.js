@@ -1,4 +1,4 @@
-import Provider from '../Provider';
+import URLProvider from '../URLProvider';
 
 const URLs = {
   HOME: '/',
@@ -12,6 +12,6 @@ const URLs = {
 
 export default {
   getUrl(key, replaceOptions) {
-    return Provider.getUrl(URLs, key, replaceOptions);
+    return URLProvider.getUrl(URLs, key, replaceOptions);
   },
 };
