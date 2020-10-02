@@ -25,7 +25,7 @@ describe('APIProvider.js Test Suite', () => {
 
     const output = APIProvider.replace(APIProvider.getUrl(key), 1);
 
-    expect(output).toEqual('/v1/todo/detail/1');
+    expect(output).toEqual('/v1/todo/1');
   });
 
   test('should erroneously replace key when passed correct replaceValue', () => {
@@ -33,6 +33,6 @@ describe('APIProvider.js Test Suite', () => {
 
     const replaceUrl = () => APIProvider.replace(APIProvider.getUrl(key), 1, ':not_id');
 
-    expect(replaceUrl()).toEqual('/v1/todo/detail/:id');
+    expect(replaceUrl()).toEqual('/v1/todo/:id');
   });
 });
