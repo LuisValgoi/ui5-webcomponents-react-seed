@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { MobileView, BrowserView, IEView, isMobile, isTablet, isDesktop, isIE, isChrome, isOpera } from 'react-device-detect';
 
 import HyperLink from '../../../components/HyperLink/HyperLink';
-import BrowserProvider from '../../../util/URL/BrowserProvider';
+import BrowserProvider from '../../../util/URL/Browser/BrowserProvider';
 import ComponentValidator from '../../../auth/Components/Validator';
 import TodoListPaginatedItems from './TodoListPaginatedItems';
 import CenteredContent from '../../../components/Layout/CenteredContent';
@@ -18,7 +18,7 @@ export default function TodoList() {
       <h1>Routing</h1>
       <HyperLink onClick={() => history.push('/dontexist')} text="Test NotFound Page" />
       <br />
-      <HyperLink onClick={() => history.push(BrowserProvider.BUGGY)} text="Test Error Page" />
+      <HyperLink onClick={() => history.push(BrowserProvider.getUrl('BUGGY'))} text="Test Error Page" />
       <br />
 
       <ComponentValidator allowedAuthorities={['canAccessDropApplication']} authorityKey="permissions">
@@ -46,7 +46,7 @@ export default function TodoList() {
       <p>{isOpera ? 'This Text is rendered only for OPERA' : 'This Text is rendered only when is NOT OPERA'}</p>
 
       <h1>Pagination</h1>
-      <TodoListPaginatedItems />
+      <TodoListPaginatedItems historty={history} />
     </CenteredContent>
   );
 }

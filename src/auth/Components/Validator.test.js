@@ -3,7 +3,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, waitFor, screen, serverCustom } from '../../util/TestSetup';
 import ComponentValidator from './Validator';
-import APIProvider from '../../util/URL/APIProvider';
+import APIProvider from '../../util/URL/API/APIProvider';
 
 describe('Validator.js Test Suite', () => {
   const GET_USER_LOGGED_RESPONSE = {
