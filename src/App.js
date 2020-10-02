@@ -14,14 +14,16 @@ function App() {
   const { t } = useTranslation();
 
   return (
-    <BrowserRouter>
+    <>
       <ReactQueryDevtools initialIsOpen={false} />
       <Helmet title={t('helmet.title.app')} />
       <Shell title={t('shell.title')} />
       <ErrorBoundary>
-        <Routes />
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
       </ErrorBoundary>
-    </BrowserRouter>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { usePaginatedGet } from '../../../hooks/useRequest';
 
 import { List } from '@ui5/webcomponents-react/lib/List';
@@ -9,7 +10,8 @@ import { Pagination } from '../../../components/Pagination/Pagination';
 import Constants from '../../../util/Constants';
 import BrowserProvider from '../../../util/browser/BrowserProvider';
 
-export default function TodoListPaginatedItems({ history }) {
+export default function TodoListPaginatedItems() {
+  const history = useHistory();
   const [page, setPage] = useState(0);
   const { resolvedData, status } = usePaginatedGet(Constants.REACT_QUERY.KEYS.RQ_GET_TODO_LIST, page, 'GET_TODO_LIST');
 
