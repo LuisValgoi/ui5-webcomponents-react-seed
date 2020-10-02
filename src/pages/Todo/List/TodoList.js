@@ -6,7 +6,7 @@ import { MobileView, BrowserView, IEView, isMobile, isTablet, isDesktop, isIE, i
 import HyperLink from '../../../components/HyperLink/HyperLink';
 import BrowserProvider from '../../../util/URL/BrowserProvider';
 import ComponentValidator from '../../../auth/Components/Validator';
-import TodoListPagination from './TodoListPagination';
+import TodoListPaginatedItems from './TodoListPaginatedItems';
 import CenteredContent from '../../../components/Layout/CenteredContent';
 
 export default function TodoList() {
@@ -46,7 +46,7 @@ export default function TodoList() {
       <p>{isOpera ? 'This Text is rendered only for OPERA' : 'This Text is rendered only when is NOT OPERA'}</p>
 
       <h1>Pagination</h1>
-      <TodoListPagination />
+      <TodoListPaginatedItems />
     </CenteredContent>
   );
 }

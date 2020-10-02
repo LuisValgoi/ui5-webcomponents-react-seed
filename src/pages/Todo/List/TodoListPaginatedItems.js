@@ -7,7 +7,7 @@ import { Spinner } from '@ui5/webcomponents-react';
 import { Pagination } from '../../../components/Pagination/Pagination';
 import Constants from '../../../util/Constants';
 
-export default function TodoListPagination() {
+export default function TodoListPaginatedItems() {
   const [page, setPage] = useState(0);
   const { resolvedData, status } = usePaginatedGet(Constants.REACT_QUERY.KEYS.RQ_GET_TODO_LIST, page, 'GET_TODO_LIST');
 
