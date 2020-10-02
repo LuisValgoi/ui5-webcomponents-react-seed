@@ -46,7 +46,7 @@ export default function TodoList() {
       <p>{isOpera ? 'This Text is rendered only for OPERA' : 'This Text is rendered only when is NOT OPERA'}</p>
 
       <h1>Pagination</h1>
-      <TodoListPaginatedItems historty={history} />
+      <TodoListPaginatedItems history={history} />
     </CenteredContent>
   );
 }

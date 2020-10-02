@@ -14,7 +14,7 @@ export default function TodoListPaginatedItems({ history }) {
   const { resolvedData, status } = usePaginatedGet(Constants.REACT_QUERY.KEYS.RQ_GET_TODO_LIST, page, 'GET_TODO_LIST');
 
   const redirectToEditPage = (e) => {
-    history.push(BrowserProvider.getUrl('TODO_EDIT'), [{ value: e.detail.item.dataset.id }]);
+    history.push(BrowserProvider.getUrl('TODO_EDIT', [{ value: e.detail.item.dataset.id }]));
   };
 
   return (
