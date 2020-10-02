@@ -45,7 +45,7 @@ export default function TodoList() {
       <p>{isIE ? 'This Text is rendered only for IE' : 'This Text is rendered only when is NOT IE'}</p>
       <p>{isOpera ? 'This Text is rendered only for OPERA' : 'This Text is rendered only when is NOT OPERA'}</p>
 
-      <h1>Pagination</h1>
+      <h1>Pagination + Edition (Formik and Yup)</h1>
       <TodoListPaginatedItems history={history} />
     </CenteredContent>
   );
