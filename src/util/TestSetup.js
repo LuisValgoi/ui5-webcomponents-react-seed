@@ -10,11 +10,11 @@ import { setupServer } from 'msw/node';
 import BrowserProvider from './browser/BrowserProvider';
 
 const render = (ui, { route = BrowserProvider.getUrl('HOME'), ...renderOptions } = {}) => {
-  const WrapperProvider = ({ children }) => {
+  const WrapperProvider = ({ ...props }) => {
     const history = createMemoryHistory({ initialEntries: [route] });
     return (
       <BrowserRouter>
-        <Router history={history}>{children}</Router>
+        <Router history={history}>{props.children}</Router>
       </BrowserRouter>
     );
   };
