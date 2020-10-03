@@ -1,8 +1,9 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 const style = {
   centered: {
-    maxWidth: '970px',
+    minWidth: isMobile ? '80%' : '50%',
     padding: '1rem',
     margin: '0 auto',
   },
