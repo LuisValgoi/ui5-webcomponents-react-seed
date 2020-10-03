@@ -10,7 +10,15 @@ const TextArea = ({ field, form: { touched, errors }, labelText, rows, style, ..
 
   return (
     <FieldBase labelText={labelText}>
-      <UI5TextArea valueState={errorState} valueStateMessage={<span>{errorMsg}</span>} rows={rows} style={style ? style : spacing.sapUiSmallMarginBottom} {...props} {...field} />
+      <UI5TextArea
+        data-testid="textArea-wrapper"
+        valueState={errorState}
+        valueStateMessage={<span>{errorMsg}</span>}
+        rows={rows}
+        style={style ? style : spacing.sapUiSmallMarginBottom}
+        {...props}
+        {...field}
+      />
     </FieldBase>
   );
 };
