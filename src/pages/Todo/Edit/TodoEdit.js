@@ -15,6 +15,13 @@ export default function TodoEdit({ match }) {
   const { data, status } = useGet(Constants.REACT_QUERY.KEYS.GET_TODO_BY_ID, APIProvider.getUrl('GET_TODO_BY_ID', [{ value: match.params.id }]));
   const { t } = useTranslation();
 
+  const onSubmitEditForm = async (values, actions) => {
+    actions.setSubmitting(true);
+    alert(JSON.stringify(values, null, 2));
+    actions.resetForm(true);
+    actions.setSubmitting(false);
+  };
+
   return (
     <>
       <Helmet title="Edit - TodoList App" />
@@ -23,7 +30,7 @@ export default function TodoEdit({ match }) {
         {status === Constants.REACT_QUERY.CODES.LOADING ? (
           <Spinner />
         ) : (
-          <TodoEditForm data={data.data.todos}>
+          <TodoEditForm data={data.data.todos} onSubmit={onSubmitEditForm}>
             <FlexBox direction={FlexBoxDirection.RowReverse} alignItems={FlexBoxAlignItems.Center}>
               <Button design={ButtonDesign.Emphasized} icon="paper-plane">
                 Submit
