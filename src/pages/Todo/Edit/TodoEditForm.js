@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Field, Form, Formik } from 'formik';
-import { Button, ButtonDesign, FlexBox, FlexBoxAlignItems, FlexBoxDirection, InputType, Spinner } from '@ui5/webcomponents-react';
+import { Button, ButtonDesign, FlexBox, FlexBoxAlignItems, FlexBoxDirection, InputType } from '@ui5/webcomponents-react';
 import Input from '../../../components/Form/Input/Input';
 import Switch from '../../../components/Form/Switch/Switch';
 import TextArea from '../../../components/Form/TextArea/TextArea';
