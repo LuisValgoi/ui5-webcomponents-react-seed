@@ -1,10 +1,14 @@
+const { MemoryRouter } = require('react-router-dom');
+
 module.exports = {
   data: {
     todos: {
       id: 'UG9rZW1vbjowMDE=',
       description: '001',
       name: 'Task 1',
-      completed: false,
+      completed: true,
+      priority: 'HIGH',
+      type: 'PERSONAL',
     },
   },
 };
