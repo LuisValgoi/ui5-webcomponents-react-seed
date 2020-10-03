@@ -5,7 +5,7 @@ import Label from '../Label/Label';
 
 const FieldBase = ({ labelText, ...props }) => {
   return (
-    <FlexBox direction={FlexBoxDirection.Column}>
+    <FlexBox data-testid="fieldbase-wrapper" direction={FlexBoxDirection.Column}>
       {labelText && <Label>{labelText}</Label>}
       {props.children}
     </FlexBox>
