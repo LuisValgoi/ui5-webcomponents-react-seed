@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import { useGet } from '../../../hooks/useRequest';
 import { ButtonDesign, FlexBox, FlexBoxAlignItems, FlexBoxDirection, Spinner } from '@ui5/webcomponents-react';
 import { Button } from '@ui5/webcomponents-react';
+import NavBack, { NavBackIcon } from '../../../components/NavBack/NavBack';
 import CenteredContent from '../../../components/Layout/CenteredContent';
-import NavBack from '../../../components/NavBack/NavBack';
 import TodoEditForm from './TodoEditForm';
 import Constants from '../../../util/Constants';
 import APIProvider from '../../../util/api/url/APIProvider';
@@ -28,7 +28,7 @@ export default function TodoEdit({ match }) {
               <Button design={ButtonDesign.Emphasized} icon="paper-plane">
                 Submit
               </Button>
-              <NavBack text="Cancel" icon="" />
+              <NavBack text="Cancel" icon={NavBackIcon.NONE} />
             </FlexBox>
           </TodoEditForm>
         )}

@@ -15,3 +15,7 @@ export default function NavBack({ text = 'Back', icon = 'nav-back', design = But
     </FlexBox>
   );
 }
+
+export const NavBackIcon = {
+  NONE: '',
+};
