@@ -51,7 +51,7 @@ PS.: It is important to add the `--template ui5-webcomponents-react-seed` at the
 
 - Multiple Scripts.
 
-# Engine Included
+# Engine & Samples Included
 
 - Fallback Engine (`<ErrorBoundary />`, `<NotFound />` and `<Error />`);
 
@@ -62,6 +62,8 @@ PS.: It is important to add the `--template ui5-webcomponents-react-seed` at the
 - Permission Engine (w/ `RouteValidator` and `ComponentValidator`).
 
 - Pagination Engine (w/ custom hook `usePaginatedGet`).
+
+- ToDo Form Edition w/ `yup` and `formik`.
 
 # Hooks Included
 
