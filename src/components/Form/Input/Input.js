@@ -8,9 +8,15 @@ const Input = ({ field, form: { touched, errors }, labelText, style, ...props })
   const errorMsg = touched[field.name] && errors[field.name];
   const errorState = errorMsg ? ValueState.Error : ValueState.None;
 
+  const innerStyle = {
+    ...style,
+    ...spacing.sapUiTinyMarginBottom,
+    width: '100%',
+  };
+
   return (
     <FieldBase labelText={labelText}>
-      <UI5Input valueState={errorState} valueStateMessage={<span>{errorMsg}</span>} style={style ? style : spacing.sapUiSmallMarginBottom} {...props} {...field} />
+      <UI5Input valueState={errorState} valueStateMessage={<span>{errorMsg}</span>} style={innerStyle} {...props} {...field} />
     </FieldBase>
   );
 };

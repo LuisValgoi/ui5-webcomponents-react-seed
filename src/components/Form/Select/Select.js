@@ -8,9 +8,15 @@ const Select = ({ field, options, labelText, form: { touched, errors, setFieldVa
   const errorMsg = touched[field.name] && errors[field.name];
   const errorState = errorMsg ? ValueState.Error : ValueState.None;
 
+  const innerStyle = {
+    ...style,
+    ...spacing.sapUiTinyMarginBottom,
+    width: '100%',
+  };
+
   return (
     <FieldBase labelText={labelText}>
-      <UI5Select valueState={errorState} style={style ? style : spacing.sapUiSmallMarginBottom} onChange={(e) => setFieldValue(field.name, e.detail.selectedOption.dataset.id)} {...props}>
+      <UI5Select valueState={errorState} style={innerStyle} onChange={(e) => setFieldValue(field.name, e.detail.selectedOption.dataset.id)} {...props}>
         {options.map((option) => (
           <Option key={option.id} data-id={option.id} selected={option.id === field.value}>
             {option.text}
