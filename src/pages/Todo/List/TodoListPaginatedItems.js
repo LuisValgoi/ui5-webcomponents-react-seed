@@ -27,21 +27,7 @@ export default function TodoListPaginatedItems() {
       ) : (
         <>
           <h3>{`Records (${resolvedData.numberOfElements} / ${resolvedData.totalElements})`}</h3>
-          <List
-            busy={status === Constants.REACT_QUERY.CODES.LOADING}
-            footerText={undefined}
-            header={null}
-            headerText={undefined}
-            infiniteScroll={false}
-            inset={false}
-            mode="None"
-            noDataText={undefined}
-            onItemClick={(e) => redirectToEditPage(e)}
-            onItemDelete={function noRefCheck() {}}
-            onLoadMore={function noRefCheck() {}}
-            onSelectionChange={function noRefCheck() {}}
-            separators="All"
-          >
+          <List onItemClick={(e) => redirectToEditPage(e)}>
             {resolvedData.content.map((todo, index) => (
               <StandardListItem data-id={todo.id} key={index} iconEnd={false} info={todo.description} infoState="None" selected={false}>
                 {todo.name}
