@@ -11,7 +11,7 @@ const Label = ({ style, ...props }) => {
   };
 
   return (
-    <UI5Label wrap style={innerStyle}>
+    <UI5Label data-testid="label-wrapper" wrap style={innerStyle}>
       {props.children}
     </UI5Label>
   );
