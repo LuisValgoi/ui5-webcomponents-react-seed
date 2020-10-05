@@ -36,14 +36,14 @@ export default function TodoEditForm({ data, onSubmitHandler }) {
           <Form>
             <div>
               <h3>Basic Info</h3>
-              <Field labelText="Name" name="name" placeholder="Name goes here" type={InputType.Text} component={Input} />
-              <Field labelText="Description" name="description" placeholder="Add your description here" rows={5} component={TextArea} />
-              <Field labelText="Completed" name="completed" component={Switch} graphical={true} />
+              <Field labelText="Name" name="name" required placeholder="Name goes here" type={InputType.Text} component={Input} />
+              <Field labelText="Description" name="description" required placeholder="Add your description here" rows={5} component={TextArea} />
+              <Field labelText="Completed" name="completed" required component={Switch} graphical={true} />
             </div>
             <div>
               <h3>Custom Info</h3>
-              <Field labelText="Priority" name="priority" component={Select} options={priorityOptions} />
-              <Field labelText="Type" name="type" component={Select} options={typeOptions} />
+              <Field labelText="Priority" name="priority" required component={Select} options={priorityOptions} />
+              <Field labelText="Type" name="type" required component={Select} options={typeOptions} />
             </div>
             <div>
               <FlexBox direction={FlexBoxDirection.RowReverse} alignItems={FlexBoxAlignItems.Center}>
