@@ -2,11 +2,11 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import BrowserProvider from '../util/browser/BrowserProvider';
 
+import RouteValidator from '../auth/routes/RouteValidator';
 import TodoList from '../pages/Todo/List/TodoList';
 import TodoEdit from '../pages/Todo/Edit/TodoEdit';
 import NotFound from '../pages/Fallback/NotFound';
 import Buggy from '../pages/Fallback/Buggy';
-import RouteValidator from '../auth/routes/Validator';
 
 const Routes = () => {
   return (
