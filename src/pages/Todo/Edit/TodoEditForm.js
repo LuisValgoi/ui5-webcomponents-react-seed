@@ -27,11 +27,11 @@ const priorityOptions = [
   { id: 'HIGH', text: 'High' },
 ];
 
-export default function TodoEditForm({ data, onSumitHandler }) {
+export default function TodoEditForm({ data, onSubmitHandler }) {
   return (
     <div style={style.putWrapperUp}>
       <h1>Todo Edit Form</h1>
-      <Formik enableReinitialize initialValues={data} validationSchema={TodoEditFormValidationSchema} onSubmit={(values, actions) => onSumitHandler(values, actions)}>
+      <Formik enableReinitialize initialValues={data} validationSchema={TodoEditFormValidationSchema} onSubmit={onSubmitHandler}>
         {({ isSubmitting, handleSubmit }) => (
           <Form>
             <div>
