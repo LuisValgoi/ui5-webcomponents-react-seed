@@ -8,8 +8,13 @@ import InformationDialog from '../InformationDialog/InformationDialog';
 
 const LanguageSwitchDialog = ({ dialogRef }) => {
   const { t } = useTranslation();
+  let selectedTheme = localStorage.getItem('reactSeedSelectedTheme');
+  setTheme(selectedTheme);
+
   const onChange = (event) => {
-    setTheme(event.detail.selectedOption.dataset.value);
+    selectedTheme = event.detail.selectedOption.dataset.value;
+    localStorage.setItem('reactSeedSelectedTheme', selectedTheme);
+    setTheme(selectedTheme);
   };
   const themeOptions = [
     { value: 'sap_fiori_3', title: t('shell.button.user.settings.item.themeSwitch.option.default') },
@@ -30,7 +35,7 @@ const LanguageSwitchDialog = ({ dialogRef }) => {
         {themeOptions &&
           themeOptions.map((option) => {
             return (
-              <Option key={option.value} data-value={option.value}>
+              <Option key={option.value} data-value={option.value} selected={option.value === selectedTheme}>
                 {option.title}
               </Option>
             );
