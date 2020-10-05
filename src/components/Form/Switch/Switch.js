@@ -13,7 +13,7 @@ const Switch = ({ field, form: { values, setFieldValue }, labelText, ...props })
   const value = values[field.name];
 
   return (
-    <FieldBase labelText={labelText}>
+    <FieldBase labelText={labelText} required={props.required} for={props.for} showColon={props.showColon}>
       <UI5Switch checked={value} onChange={() => setFieldValue(field.name, !value)} style={style.switch} {...props} />
     </FieldBase>
   );

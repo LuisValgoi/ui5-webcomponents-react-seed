@@ -9,7 +9,7 @@ const TextArea = ({ field, form: { touched, errors }, labelText, rows, style, ..
   const errorState = errorMsg ? ValueState.Error : ValueState.None;
 
   return (
-    <FieldBase labelText={labelText}>
+    <FieldBase labelText={labelText} required={props.required} for={props.for} showColon={props.showColon}>
       <UI5TextArea
         data-testid="textArea-wrapper"
         valueState={errorState}

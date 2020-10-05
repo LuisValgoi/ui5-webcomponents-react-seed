@@ -15,7 +15,7 @@ const Input = ({ field, form: { touched, errors }, labelText, style, ...props })
   };
 
   return (
-    <FieldBase labelText={labelText}>
+    <FieldBase labelText={labelText} required={props.required} for={props.for} showColon={props.showColon}>
       <UI5Input data-testid="input-wrapper" valueState={errorState} valueStateMessage={<span>{errorMsg}</span>} style={innerStyle} {...props} {...field} />
     </FieldBase>
   );
