@@ -42,8 +42,8 @@ export default function TodoEditForm({ data, onSumitHandler }) {
             </div>
             <div>
               <h3>Custom Info</h3>
-              <Field labelText="Priority" name="priority" component={Select} options={priorityOptions}></Field>
-              <Field labelText="Type" name="type" component={Select} options={typeOptions}></Field>
+              <Field labelText="Priority" name="priority" component={Select} options={priorityOptions} />
+              <Field labelText="Type" name="type" component={Select} options={typeOptions} />
             </div>
             <div>
               <FlexBox direction={FlexBoxDirection.RowReverse} alignItems={FlexBoxAlignItems.Center}>
