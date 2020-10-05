@@ -25,7 +25,7 @@ export default function TodoEdit({ match }) {
   return (
     <>
       <Helmet title="Edit - TodoList App" />
-      <NavBack text={t('components.navback.text')} />
+      <NavBack />
       <CenteredContent>
         {status === Constants.REACT_QUERY.CODES.LOADING && <Spinner />}
         {status === Constants.REACT_QUERY.CODES.SUCCESS && <TodoEditForm data={data.data.todos} onSumitHandler={onSubmitEditForm} />}
