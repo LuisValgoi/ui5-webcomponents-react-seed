@@ -9,15 +9,15 @@ import TodoEditForm from './TodoEditForm';
 import Constants from '../../../util/Constants';
 import APIProvider from '../../../util/api/url/APIProvider';
 
+const onSubmitEditForm = (values, actions) => {
+  actions.setSubmitting(true);
+  alert(JSON.stringify(values, null, 2));
+  actions.resetForm(true);
+  actions.setSubmitting(false);
+};
+
 export default function TodoEdit({ match }) {
   const { data, status } = useGet(Constants.REACT_QUERY.KEYS.GET_TODO_BY_ID, APIProvider.getUrl('GET_TODO_BY_ID', [{ value: match.params.id }]));
-
-  const onSubmitEditForm = (values, actions) => {
-    actions.setSubmitting(true);
-    alert(JSON.stringify(values, null, 2));
-    actions.resetForm(true);
-    actions.setSubmitting(false);
-  };
 
   return (
     <>
