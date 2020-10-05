@@ -13,8 +13,10 @@ const LanguageSwitchDialog = ({ dialogRef }) => {
   };
   const themeOptions = [
     { value: 'sap_fiori_3', title: t('shell.button.user.settings.item.themeSwitch.option.default') },
-    { value: 'sap_belize_hcb', title: t('shell.button.user.settings.item.themeSwitch.option.highContrastBlack') },
-    { value: 'sap_belize_hcw', title: t('shell.button.user.settings.item.themeSwitch.option.highContrastWhite') },
+    { value: 'sap_fiori_3_dark', title: t('shell.button.user.settings.item.themeSwitch.option.dark') },
+    { value: 'sap_belize', title: t('shell.button.user.settings.item.themeSwitch.option.belize') },
+    { value: 'sap_fiori_3_hcb', title: t('shell.button.user.settings.item.themeSwitch.option.highContrastBlack') },
+    { value: 'sap_fiori_3_hcw', title: t('shell.button.user.settings.item.themeSwitch.option.highContrastWhite') },
   ];
   const style = {
     select: {
