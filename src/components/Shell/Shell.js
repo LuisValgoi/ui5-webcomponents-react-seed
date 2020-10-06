@@ -56,7 +56,7 @@ const Shell = ({ title, ...props }) => {
       />
       <div data-testid="emptySpace-wrapper" style={style.emptySpace} />
       <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItems} />
-      <LanguageSwitchDialog dialogRef={themeSwitchRef} storedTheme="sap_fiori_3_hcb" />
+      <LanguageSwitchDialog dialogRef={themeSwitchRef} />
     </>
   );
 };
