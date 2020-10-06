@@ -27,7 +27,7 @@ const Shell = ({ title, ...props }) => {
   const popoverConfigItemsRef = useRef(null);
   const themeSwitchRef = useRef(null);
   const openThemeSwitch = () => {
-    themeSwitchRef.current.open()
+    themeSwitchRef.current.open();
   };
   const popoverItems = [
     {
@@ -56,7 +56,7 @@ const Shell = ({ title, ...props }) => {
       />
       <div data-testid="emptySpace-wrapper" style={style.emptySpace} />
       <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItems} />
-      <LanguageSwitchDialog dialogRef={themeSwitchRef}></LanguageSwitchDialog>
+      <LanguageSwitchDialog dialogRef={themeSwitchRef} storedTheme="sap_fiori_3_hcb" />
     </>
   );
 };
