@@ -6,15 +6,14 @@ import { Select } from '@ui5/webcomponents-react/lib/Select';
 import { setTheme } from '@ui5/webcomponents-base/dist/config/Theme.js';
 import InformationDialog from '../InformationDialog/InformationDialog';
 
-const LanguageSwitchDialog = ({ dialogRef }) => {
+const LanguageSwitchDialog = ({ dialogRef, storedTheme = localStorage.getItem('reactSeedSelectedTheme') }) => {
   const { t } = useTranslation();
-  let selectedTheme = localStorage.getItem('reactSeedSelectedTheme');
-  setTheme(selectedTheme);
+  setTheme(storedTheme ? storedTheme : 'sap_fiori_3');
 
   const onChange = (event) => {
-    selectedTheme = event.detail.selectedOption.dataset.value;
-    localStorage.setItem('reactSeedSelectedTheme', selectedTheme);
-    setTheme(selectedTheme);
+    storedTheme = event.detail.selectedOption.dataset.value;
+    localStorage.setItem('reactSeedSelectedTheme', storedTheme);
+    setTheme(storedTheme);
   };
   const themeOptions = [
     { value: 'sap_fiori_3', title: t('shell.button.user.settings.item.themeSwitch.option.default') },
@@ -31,11 +30,11 @@ const LanguageSwitchDialog = ({ dialogRef }) => {
 
   return (
     <InformationDialog dialogRef={dialogRef} headerText={t('shell.button.user.settings.item.themeSwitch.title')}>
-      <Select onChange={onChange} style={style.select}>
+      <Select onChange={onChange} style={style.select} data-testid="language-switch-wrapper">
         {themeOptions &&
           themeOptions.map((option) => {
             return (
-              <Option key={option.value} data-value={option.value} selected={option.value === selectedTheme}>
+              <Option key={option.value} data-value={option.value} selected={option.value === storedTheme}>
                 {option.title}
               </Option>
             );
