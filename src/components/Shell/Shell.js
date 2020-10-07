@@ -26,9 +26,6 @@ const Shell = ({ title, ...props }) => {
   const history = useHistory();
   const popoverConfigItemsRef = useRef(null);
   const themeSwitchRef = useRef(null);
-  const openThemeSwitch = () => {
-    themeSwitchRef.current.open();
-  };
   const popoverItems = [
     {
       children: t('shell.button.user.settings.item.languageSwitch'),
@@ -38,7 +35,7 @@ const Shell = ({ title, ...props }) => {
     {
       children: t('shell.button.user.settings.item.themeSwitch'),
       icon: 'customize',
-      onClick: () => openThemeSwitch(),
+      onClick: () => themeSwitchRef.current.open(),
     },
   ];
 
