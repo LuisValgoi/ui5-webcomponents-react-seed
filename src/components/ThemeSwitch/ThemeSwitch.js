@@ -6,7 +6,7 @@ import { Select } from '@ui5/webcomponents-react/lib/Select';
 import { setTheme } from '@ui5/webcomponents-base/dist/config/Theme.js';
 import InformationDialog from '../InformationDialog/InformationDialog';
 
-const LanguageSwitchDialog = ({ dialogRef, storedTheme = localStorage.getItem('reactSeedSelectedTheme') }) => {
+const ThemeSwitch = ({ dialogRef, storedTheme = localStorage.getItem('reactSeedSelectedTheme') }) => {
   const { t } = useTranslation();
   setTheme(storedTheme ? storedTheme : 'sap_fiori_3');
 
@@ -44,4 +44,4 @@ const LanguageSwitchDialog = ({ dialogRef, storedTheme = localStorage.getItem('r
   );
 };
 
-export default LanguageSwitchDialog;
+export default ThemeSwitch;

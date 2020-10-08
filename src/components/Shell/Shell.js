@@ -8,7 +8,7 @@ import { AvatarShape } from '@ui5/webcomponents-react/lib/AvatarShape';
 import { AvatarSize } from '@ui5/webcomponents-react/lib/AvatarSize';
 import BrowserProvider from '../../util/browser/BrowserProvider';
 import PopoverListItems from '../Popover/List/PopoverListItems';
-import LanguageSwitchDialog from './LanguageSwitchDialog';
+import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 
 const style = {
   shell: {
@@ -53,7 +53,7 @@ const Shell = ({ title, ...props }) => {
       />
       <div data-testid="emptySpace-wrapper" style={style.emptySpace} />
       <PopoverListItems popoverRef={popoverConfigItemsRef} title={t('shell.button.user.settings')} items={popoverItems} />
-      <LanguageSwitchDialog dialogRef={themeSwitchRef} />
+      <ThemeSwitch dialogRef={themeSwitchRef} />
     </>
   );
 };
