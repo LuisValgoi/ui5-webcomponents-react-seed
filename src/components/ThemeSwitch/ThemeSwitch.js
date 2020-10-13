@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Option } from '@ui5/webcomponents-react/lib/Option';
@@ -21,7 +21,9 @@ const style = {
 
 const ThemeSwitch = ({ dialogRef, storedTheme = localStorage.getItem('reactSeedSelectedTheme') }) => {
   const { t } = useTranslation();
-  setTheme(storedTheme ? storedTheme : 'sap_fiori_3');
+  useEffect(() => {
+    setTheme(storedTheme ? storedTheme : 'sap_fiori_3');
+  });
   const onChange = (event) => {
     storedTheme = event.detail.selectedOption.dataset.value;
     localStorage.setItem('reactSeedSelectedTheme', storedTheme);
