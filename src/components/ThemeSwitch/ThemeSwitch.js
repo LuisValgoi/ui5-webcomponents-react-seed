@@ -5,6 +5,13 @@ import { Option } from '@ui5/webcomponents-react/lib/Option';
 import { Select } from '@ui5/webcomponents-react/lib/Select';
 import { setTheme } from '@ui5/webcomponents-base/dist/config/Theme.js';
 import InformationDialog from '../InformationDialog/InformationDialog';
+import Constants from '../../util/Constants';
+
+const style = {
+  select: {
+    width: '100%',
+  },
+};
 
 const themeOptions = [
   { value: 'sap_fiori_3', title: 'shell.button.user.settings.item.themeSwitch.option.default' },
@@ -13,21 +20,17 @@ const themeOptions = [
   { value: 'sap_fiori_3_hcb', title: 'shell.button.user.settings.item.themeSwitch.option.highContrastBlack' },
   { value: 'sap_fiori_3_hcw', title: 'shell.button.user.settings.item.themeSwitch.option.highContrastWhite' },
 ];
-const style = {
-  select: {
-    width: '100%',
-  },
-};
 
-const ThemeSwitch = ({ dialogRef, storedTheme = localStorage.getItem('reactSeedSelectedTheme') }) => {
+const ThemeSwitch = ({ dialogRef, storedTheme = localStorage.getItem(Constants.SEED.SELECTED_THEME) }) => {
   const { t } = useTranslation();
+
   useEffect(() => {
-    setTheme(storedTheme ? storedTheme : 'sap_fiori_3');
+    setTheme(storedTheme ? storedTheme : themeOptions[0].value);
   });
+
   const onChange = (event) => {
-    storedTheme = event.detail.selectedOption.dataset.value;
-    localStorage.setItem('reactSeedSelectedTheme', storedTheme);
-    setTheme(storedTheme);
+    localStorage.setItem(Constants.SEED.SELECTED_THEME, event.detail.selectedOption.dataset.value);
+    setTheme(event.detail.selectedOption.dataset.value);
   };
 
   return (
