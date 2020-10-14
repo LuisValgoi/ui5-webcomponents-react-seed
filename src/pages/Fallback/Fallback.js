@@ -16,7 +16,7 @@ const style = {
     width: '30%',
   },
   reloadButton: {
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
 };
 
