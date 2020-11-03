@@ -1,64 +1,89 @@
-import { usePaginatedQuery, useQuery } from 'react-query';
+import { useMutation, usePaginatedQuery, useQuery } from 'react-query';
 
 import Request from '../util/api/engine/Request';
 
-const FIVE_MINUTES_IN_MILLISECONDS = 1000 * 60 * 5;
-
-const STALE_TIME = {
-  staleTime: FIVE_MINUTES_IN_MILLISECONDS,
-};
-
-const REQUEST = {
-  GET: 'get',
-  POST: 'get',
+const REQUEST_TYPE = {
+  POST: 'post',
   PUT: 'put',
   PATCH: 'patch',
   DELETE: 'delete',
 };
 
-const _fetchData = (operation, url, dataParam, config) => {
+const _fetchData = (url, dataParam, config) => {
   return async () => {
-    const res = await Request[operation](url, dataParam, config);
+    const res = await Request.get(url, dataParam, config);
     return res.data;
   };
 };
 
-const _useOperation = (reactQueryKey, operation, url, dataParam, config) => {
-  const { data, status } = useQuery(reactQueryKey, _fetchData(operation, url, dataParam, config), STALE_TIME);
-  return { data, status };
+const _performRequest = ({ operation, url, dataParam, requestConfig }) => {
+  return Request[operation](url, dataParam, requestConfig);
 };
 
-const _usePaginatedOperation = (reactQueryKey, pageDependency, operation, url, dataParam, config) => {
+const _useOperation = (reactQueryKey, url, config) => {
+  return useQuery(reactQueryKey, _fetchData(url, null, config));
+};
+
+const _useMutation = ({ operation, url, requestConfig, mutationOptions }) => {
+  return useMutation((dataParam) => {
+    _performRequest({
+      operation,
+      url,
+      dataParam,
+      requestConfig,
+    });
+  }, mutationOptions);
+};
+
+const _usePaginatedOperation = (reactQueryKey, pageDependency, url, config) => {
   const parameters = {
     params: {
-      ...dataParam,
       page: pageDependency,
     },
   };
-  const { resolvedData, latestData, status } = usePaginatedQuery([reactQueryKey, pageDependency], _fetchData(operation, url, parameters, config), STALE_TIME);
-  return { resolvedData, latestData, status };
+  return usePaginatedQuery([reactQueryKey, pageDependency], _fetchData(url, parameters, config));
 };
 
 export function useGet(reactQueryKey, url, config) {
-  return _useOperation(reactQueryKey, REQUEST.GET, url, null, config ? config : null);
+  return _useOperation(reactQueryKey, url, config);
 }
 
 export function usePaginatedGet(reactQueryKey, pageDependency, url, config) {
-  return _usePaginatedOperation(reactQueryKey, pageDependency, REQUEST.GET, url, null, config ? config : null);
+  return _usePaginatedOperation(reactQueryKey, pageDependency, url, config);
 }
 
-export function usePost(reactQueryKey, url, dataParam, config) {
-  return _useOperation(reactQueryKey, REQUEST.POST, url, dataParam ? dataParam : null, config ? config : null);
+export function usePost({ url, requestConfig, mutationOptions }) {
+  return _useMutation({
+    operation: REQUEST_TYPE.POST,
+    url,
+    requestConfig,
+    mutationOptions,
+  });
 }
 
-export function usePut(reactQueryKey, url, dataParam, config) {
-  return _useOperation(reactQueryKey, REQUEST.PUT, url, dataParam ? dataParam : null, config ? config : null);
+export function usePut({ url, requestConfig, mutationOptions }) {
+  return _useMutation({
+    operation: REQUEST_TYPE.PUT,
+    url,
+    requestConfig,
+    mutationOptions,
+  });
 }
 
-export function usePatch(reactQueryKey, url, dataParam, config) {
-  return _useOperation(reactQueryKey, REQUEST.PATCH, url, dataParam ? dataParam : null, config ? config : null);
+export function usePatch({ url, requestConfig, mutationOptions }) {
+  return _useMutation({
+    operation: REQUEST_TYPE.PATCH,
+    url,
+    requestConfig,
+    mutationOptions,
+  });
 }
 
-export function useDelete(reactQueryKey, url, config) {
-  return _useOperation(reactQueryKey, REQUEST.DELETE, url, null, config ? config : null);
+export function useDelete({ url, requestConfig, mutationOptions }) {
+  return _useMutation({
+    operation: REQUEST_TYPE.DELETE,
+    url,
+    requestConfig,
+    mutationOptions,
+  });
 }
