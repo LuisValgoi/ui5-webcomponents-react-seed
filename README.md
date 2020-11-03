@@ -28,7 +28,7 @@
 
 # Warning
 
-⚠️ The repo is currently freezed and moved to the Official and public SAP UI5 WebComponents for React repository ⚠️
+⚠️ The repo was moved to the SAP UI5 WebComponents for React repository ⚠️
 
 For more info, check this link [here](https://github.com/SAP/ui5-webcomponents-react#creating-a-new-react-app-based-on-our-seed).
 
