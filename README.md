@@ -26,6 +26,12 @@
 
 `ui5-webcomponents-react-seed` decrease’s the bootstrap time spent on new projects, POCs or MVPs which uses **React + UI5 WebComponents React** by leveraging several out-of-the-box components, scripts & configurations.
 
+# Warning
+
+⚠️ The repo is currently freezed and moved to the Official and public SAP UI5 WebComponents for React repository ⚠️
+
+For more info, check this link [here](https://github.com/SAP/ui5-webcomponents-react#creating-a-new-react-app-based-on-our-seed).
+
 # Usage
 
 - open the terminal;
